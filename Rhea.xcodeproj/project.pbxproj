@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190AE0B0186974E70071E892 /* CityInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 190AE0AF186974E70071E892 /* CityInfo.json */; };
+		190AE0BB186977F90071E892 /* REViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190AE0BA186977F90071E892 /* REViewController.m */; };
+		190AE0BE1869781F0071E892 /* RENavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190AE0BD1869781F0071E892 /* RENavigationController.m */; };
 		1942D9461869619F00B87C64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1942D9451869619F00B87C64 /* Foundation.framework */; };
 		1942D9481869619F00B87C64 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1942D9471869619F00B87C64 /* CoreGraphics.framework */; };
 		1942D94A1869619F00B87C64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1942D9491869619F00B87C64 /* UIKit.framework */; };
@@ -34,6 +37,11 @@
 
 /* Begin PBXFileReference section */
 		190AE0AD1869691C0071E892 /* REConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REConstants.h; sourceTree = "<group>"; };
+		190AE0AF186974E70071E892 /* CityInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CityInfo.json; path = ../CityInfo.json; sourceTree = "<group>"; };
+		190AE0B9186977F90071E892 /* REViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REViewController.h; sourceTree = "<group>"; };
+		190AE0BA186977F90071E892 /* REViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REViewController.m; sourceTree = "<group>"; };
+		190AE0BC1869781F0071E892 /* RENavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RENavigationController.h; sourceTree = "<group>"; };
+		190AE0BD1869781F0071E892 /* RENavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RENavigationController.m; sourceTree = "<group>"; };
 		1942D9421869619F00B87C64 /* Rhea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rhea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1942D9451869619F00B87C64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1942D9471869619F00B87C64 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -44,7 +52,7 @@
 		1942D9531869619F00B87C64 /* Rhea-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rhea-Prefix.pch"; sourceTree = "<group>"; };
 		1942D9541869619F00B87C64 /* REAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REAppDelegate.h; sourceTree = "<group>"; };
 		1942D9551869619F00B87C64 /* REAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REAppDelegate.m; sourceTree = "<group>"; };
-		1942D9571869619F00B87C64 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1942D9571869619F00B87C64 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		1942D95D1869619F00B87C64 /* RheaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RheaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1942D95E1869619F00B87C64 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1942D9661869619F00B87C64 /* RheaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RheaTests-Info.plist"; sourceTree = "<group>"; };
@@ -79,6 +87,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		190AE0B1186976510071E892 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1942D9541869619F00B87C64 /* REAppDelegate.h */,
+				1942D9551869619F00B87C64 /* REAppDelegate.m */,
+				190AE0AD1869691C0071E892 /* REConstants.h */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		190AE0B4186976CA0071E892 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				190AE0AF186974E70071E892 /* CityInfo.json */,
+				1942D9571869619F00B87C64 /* Images.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		190AE0B51869770C0071E892 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		190AE0B6186977140071E892 /* Modle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modle;
+			sourceTree = "<group>";
+		};
+		190AE0B7186977250071E892 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				190AE0B81869772D0071E892 /* Basic */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		190AE0B81869772D0071E892 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				190AE0B9186977F90071E892 /* REViewController.h */,
+				190AE0BA186977F90071E892 /* REViewController.m */,
+				190AE0BC1869781F0071E892 /* RENavigationController.h */,
+				190AE0BD1869781F0071E892 /* RENavigationController.m */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
 		1942D9391869619E00B87C64 = {
 			isa = PBXGroup;
 			children = (
@@ -114,10 +174,11 @@
 		1942D94B1869619F00B87C64 /* Rhea */ = {
 			isa = PBXGroup;
 			children = (
-				1942D9541869619F00B87C64 /* REAppDelegate.h */,
-				1942D9551869619F00B87C64 /* REAppDelegate.m */,
-				190AE0AD1869691C0071E892 /* REConstants.h */,
-				1942D9571869619F00B87C64 /* Images.xcassets */,
+				190AE0B7186977250071E892 /* Controller */,
+				190AE0B6186977140071E892 /* Modle */,
+				190AE0B51869770C0071E892 /* View */,
+				190AE0B4186976CA0071E892 /* Resource */,
+				190AE0B1186976510071E892 /* Application */,
 				1942D94C1869619F00B87C64 /* Supporting Files */,
 			);
 			path = Rhea;
@@ -230,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				190AE0B0186974E70071E892 /* CityInfo.json in Resources */,
 				1942D9501869619F00B87C64 /* InfoPlist.strings in Resources */,
 				1942D9581869619F00B87C64 /* Images.xcassets in Resources */,
 			);
@@ -285,6 +347,8 @@
 			files = (
 				1942D9521869619F00B87C64 /* main.m in Sources */,
 				1942D9561869619F00B87C64 /* REAppDelegate.m in Sources */,
+				190AE0BE1869781F0071E892 /* RENavigationController.m in Sources */,
+				190AE0BB186977F90071E892 /* REViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +471,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rhea/Rhea-Prefix.pch";
 				INFOPLIST_FILE = "Rhea/Rhea-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -421,6 +486,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rhea/Rhea-Prefix.pch";
 				INFOPLIST_FILE = "Rhea/Rhea-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
