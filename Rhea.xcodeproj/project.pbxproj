@@ -19,6 +19,7 @@
 		1942D9611869619F00B87C64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1942D9491869619F00B87C64 /* UIKit.framework */; };
 		1942D9691869619F00B87C64 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1942D9671869619F00B87C64 /* InfoPlist.strings */; };
 		1942D96B1869619F00B87C64 /* RheaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942D96A1869619F00B87C64 /* RheaTests.m */; };
+		CA728681C25B4FB39445E89A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9760B72B54144719A24463C8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		190AE0AD1869691C0071E892 /* REConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REConstants.h; sourceTree = "<group>"; };
 		1942D9421869619F00B87C64 /* Rhea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rhea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1942D9451869619F00B87C64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1942D9471869619F00B87C64 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +50,8 @@
 		1942D9661869619F00B87C64 /* RheaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RheaTests-Info.plist"; sourceTree = "<group>"; };
 		1942D9681869619F00B87C64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1942D96A1869619F00B87C64 /* RheaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RheaTests.m; sourceTree = "<group>"; };
+		368222D05494443C864538E2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		9760B72B54144719A24463C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 				1942D9481869619F00B87C64 /* CoreGraphics.framework in Frameworks */,
 				1942D94A1869619F00B87C64 /* UIKit.framework in Frameworks */,
 				1942D9461869619F00B87C64 /* Foundation.framework in Frameworks */,
+				CA728681C25B4FB39445E89A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,7 @@
 				1942D9641869619F00B87C64 /* RheaTests */,
 				1942D9441869619F00B87C64 /* Frameworks */,
 				1942D9431869619F00B87C64 /* Products */,
+				368222D05494443C864538E2 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +106,7 @@
 				1942D9471869619F00B87C64 /* CoreGraphics.framework */,
 				1942D9491869619F00B87C64 /* UIKit.framework */,
 				1942D95E1869619F00B87C64 /* XCTest.framework */,
+				9760B72B54144719A24463C8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,6 +116,7 @@
 			children = (
 				1942D9541869619F00B87C64 /* REAppDelegate.h */,
 				1942D9551869619F00B87C64 /* REAppDelegate.m */,
+				190AE0AD1869691C0071E892 /* REConstants.h */,
 				1942D9571869619F00B87C64 /* Images.xcassets */,
 				1942D94C1869619F00B87C64 /* Supporting Files */,
 			);
@@ -151,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1942D96E1869619F00B87C64 /* Build configuration list for PBXNativeTarget "Rhea" */;
 			buildPhases = (
+				F6020E317FF94AE394C23086 /* Check Pods Manifest.lock */,
 				1942D93E1869619F00B87C64 /* Sources */,
 				1942D93F1869619F00B87C64 /* Frameworks */,
 				1942D9401869619F00B87C64 /* Resources */,
+				5E6BB206E0344A7B8FCBF844 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +244,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E6BB206E0344A7B8FCBF844 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6020E317FF94AE394C23086 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1942D93E1869619F00B87C64 /* Sources */ = {
@@ -357,6 +400,7 @@
 		};
 		1942D96F1869619F00B87C64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 368222D05494443C864538E2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -370,6 +414,7 @@
 		};
 		1942D9701869619F00B87C64 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 368222D05494443C864538E2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -442,6 +487,7 @@
 				1942D9701869619F00B87C64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1942D9711869619F00B87C64 /* Build configuration list for PBXNativeTarget "RheaTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +496,7 @@
 				1942D9731869619F00B87C64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

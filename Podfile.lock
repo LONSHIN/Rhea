@@ -1,0 +1,33 @@
+PODS:
+  - Gaea (0.0.1)
+  - ReactiveCocoa (2.1.8):
+    - ReactiveCocoa/Core
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/Core (2.1.8):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.1.8)
+  - SDWebImage (3.5.1):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.5.1)
+  - SVProgressHUD (1.0)
+  - UMengAnalytics (2.2.1)
+
+DEPENDENCIES:
+  - Gaea (from `https://gist.github.com/iostiger/7262288/raw/f3c104238a03fac19c4b44aa29407202a15bd690/Gaea.podspec`)
+  - ReactiveCocoa
+  - SDWebImage
+  - SVProgressHUD
+  - UMengAnalytics
+
+EXTERNAL SOURCES:
+  Gaea:
+    :podspec: https://gist.github.com/iostiger/7262288/raw/f3c104238a03fac19c4b44aa29407202a15bd690/Gaea.podspec
+
+SPEC CHECKSUMS:
+  Gaea: ae0869cf638a9f79a875d829a5bf21b7e02708e2
+  ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
+  SDWebImage: a408b548a634b792372e07e753fc1079aff5032a
+  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
+  UMengAnalytics: f4fd387a67f1ac6cef005d196ddd690c9515566d
+
+COCOAPODS: 0.27.1
