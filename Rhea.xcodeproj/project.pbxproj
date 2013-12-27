@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		190AE0B0186974E70071E892 /* CityInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 190AE0AF186974E70071E892 /* CityInfo.json */; };
 		190AE0BB186977F90071E892 /* REViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190AE0BA186977F90071E892 /* REViewController.m */; };
 		190AE0BE1869781F0071E892 /* RENavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190AE0BD1869781F0071E892 /* RENavigationController.m */; };
 		1942D9461869619F00B87C64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1942D9451869619F00B87C64 /* Foundation.framework */; };
@@ -22,6 +21,18 @@
 		1942D9611869619F00B87C64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1942D9491869619F00B87C64 /* UIKit.framework */; };
 		1942D9691869619F00B87C64 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1942D9671869619F00B87C64 /* InfoPlist.strings */; };
 		1942D96B1869619F00B87C64 /* RheaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942D96A1869619F00B87C64 /* RheaTests.m */; };
+		196E5AA5186BC934006F25DF /* CNSBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AA2186BC934006F25DF /* CNSBannerView.m */; };
+		196E5AA6186BC934006F25DF /* CNSPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AA4186BC934006F25DF /* CNSPageControl.m */; };
+		196E5AA9186BCABC006F25DF /* REHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AA8186BCABC006F25DF /* REHomePageViewController.m */; };
+		196E5AAC186BCDA3006F25DF /* REBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AAB186BCDA3006F25DF /* REBanner.m */; };
+		196E5AAF186BD387006F25DF /* REAddCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AAE186BD387006F25DF /* REAddCarViewController.m */; };
+		196E5AB6186BE6FE006F25DF /* REHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AB5186BE6FE006F25DF /* REHTTPClient.m */; };
+		196E5AB9186BE9F0006F25DF /* RELibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AB8186BE9F0006F25DF /* RELibraryAPI.m */; };
+		196E5ABC186BFCB7006F25DF /* RECity.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5ABB186BFCB7006F25DF /* RECity.m */; };
+		196E5ABF186C1393006F25DF /* RECityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5ABE186C1393006F25DF /* RECityListViewController.m */; };
+		196E5AC1186C2156006F25DF /* bar_button_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 196E5AC0186C2156006F25DF /* bar_button_back@2x.png */; };
+		196E5AC5186C37A2006F25DF /* RECityListSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AC4186C37A2006F25DF /* RECityListSectionHeaderView.m */; };
+		19E253EF186D1DA0004B33A5 /* RECityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E253EE186D1DA0004B33A5 /* RECityListCell.m */; };
 		CA728681C25B4FB39445E89A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9760B72B54144719A24463C8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +48,6 @@
 
 /* Begin PBXFileReference section */
 		190AE0AD1869691C0071E892 /* REConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REConstants.h; sourceTree = "<group>"; };
-		190AE0AF186974E70071E892 /* CityInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CityInfo.json; path = ../CityInfo.json; sourceTree = "<group>"; };
 		190AE0B9186977F90071E892 /* REViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REViewController.h; sourceTree = "<group>"; };
 		190AE0BA186977F90071E892 /* REViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REViewController.m; sourceTree = "<group>"; };
 		190AE0BC1869781F0071E892 /* RENavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RENavigationController.h; sourceTree = "<group>"; };
@@ -58,6 +68,29 @@
 		1942D9661869619F00B87C64 /* RheaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RheaTests-Info.plist"; sourceTree = "<group>"; };
 		1942D9681869619F00B87C64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1942D96A1869619F00B87C64 /* RheaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RheaTests.m; sourceTree = "<group>"; };
+		196E5AA1186BC934006F25DF /* CNSBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNSBannerView.h; sourceTree = "<group>"; };
+		196E5AA2186BC934006F25DF /* CNSBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNSBannerView.m; sourceTree = "<group>"; };
+		196E5AA3186BC934006F25DF /* CNSPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNSPageControl.h; sourceTree = "<group>"; };
+		196E5AA4186BC934006F25DF /* CNSPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNSPageControl.m; sourceTree = "<group>"; };
+		196E5AA7186BCABC006F25DF /* REHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REHomePageViewController.h; sourceTree = "<group>"; };
+		196E5AA8186BCABC006F25DF /* REHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REHomePageViewController.m; sourceTree = "<group>"; };
+		196E5AAA186BCDA3006F25DF /* REBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REBanner.h; sourceTree = "<group>"; };
+		196E5AAB186BCDA3006F25DF /* REBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REBanner.m; sourceTree = "<group>"; };
+		196E5AAD186BD387006F25DF /* REAddCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAddCarViewController.h; sourceTree = "<group>"; };
+		196E5AAE186BD387006F25DF /* REAddCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REAddCarViewController.m; sourceTree = "<group>"; };
+		196E5AB4186BE6FE006F25DF /* REHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REHTTPClient.h; sourceTree = "<group>"; };
+		196E5AB5186BE6FE006F25DF /* REHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REHTTPClient.m; sourceTree = "<group>"; };
+		196E5AB7186BE9F0006F25DF /* RELibraryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RELibraryAPI.h; sourceTree = "<group>"; };
+		196E5AB8186BE9F0006F25DF /* RELibraryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RELibraryAPI.m; sourceTree = "<group>"; };
+		196E5ABA186BFCB7006F25DF /* RECity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECity.h; sourceTree = "<group>"; };
+		196E5ABB186BFCB7006F25DF /* RECity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECity.m; sourceTree = "<group>"; };
+		196E5ABD186C1393006F25DF /* RECityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECityListViewController.h; sourceTree = "<group>"; };
+		196E5ABE186C1393006F25DF /* RECityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECityListViewController.m; sourceTree = "<group>"; };
+		196E5AC0186C2156006F25DF /* bar_button_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar_button_back@2x.png"; sourceTree = "<group>"; };
+		196E5AC3186C37A2006F25DF /* RECityListSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECityListSectionHeaderView.h; sourceTree = "<group>"; };
+		196E5AC4186C37A2006F25DF /* RECityListSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECityListSectionHeaderView.m; sourceTree = "<group>"; };
+		19E253ED186D1DA0004B33A5 /* RECityListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECityListCell.h; sourceTree = "<group>"; };
+		19E253EE186D1DA0004B33A5 /* RECityListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECityListCell.m; sourceTree = "<group>"; };
 		368222D05494443C864538E2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		9760B72B54144719A24463C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,7 +133,7 @@
 		190AE0B4186976CA0071E892 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				190AE0AF186974E70071E892 /* CityInfo.json */,
+				196E5AC0186C2156006F25DF /* bar_button_back@2x.png */,
 				1942D9571869619F00B87C64 /* Images.xcassets */,
 			);
 			path = Resource;
@@ -109,6 +142,8 @@
 		190AE0B51869770C0071E892 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				196E5AC2186C3771006F25DF /* CityList */,
+				196E5AA0186BC928006F25DF /* Banner */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +151,10 @@
 		190AE0B6186977140071E892 /* Modle */ = {
 			isa = PBXGroup;
 			children = (
+				196E5AAA186BCDA3006F25DF /* REBanner.h */,
+				196E5AAB186BCDA3006F25DF /* REBanner.m */,
+				196E5ABA186BFCB7006F25DF /* RECity.h */,
+				196E5ABB186BFCB7006F25DF /* RECity.m */,
 			);
 			path = Modle;
 			sourceTree = "<group>";
@@ -124,6 +163,12 @@
 			isa = PBXGroup;
 			children = (
 				190AE0B81869772D0071E892 /* Basic */,
+				196E5AA7186BCABC006F25DF /* REHomePageViewController.h */,
+				196E5AA8186BCABC006F25DF /* REHomePageViewController.m */,
+				196E5AAD186BD387006F25DF /* REAddCarViewController.h */,
+				196E5AAE186BD387006F25DF /* REAddCarViewController.m */,
+				196E5ABD186C1393006F25DF /* RECityListViewController.h */,
+				196E5ABE186C1393006F25DF /* RECityListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +222,7 @@
 				190AE0B7186977250071E892 /* Controller */,
 				190AE0B6186977140071E892 /* Modle */,
 				190AE0B51869770C0071E892 /* View */,
+				196E5AB0186BDC7C006F25DF /* API */,
 				190AE0B4186976CA0071E892 /* Resource */,
 				190AE0B1186976510071E892 /* Application */,
 				1942D94C1869619F00B87C64 /* Supporting Files */,
@@ -211,6 +257,39 @@
 				1942D9671869619F00B87C64 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		196E5AA0186BC928006F25DF /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				196E5AA1186BC934006F25DF /* CNSBannerView.h */,
+				196E5AA2186BC934006F25DF /* CNSBannerView.m */,
+				196E5AA3186BC934006F25DF /* CNSPageControl.h */,
+				196E5AA4186BC934006F25DF /* CNSPageControl.m */,
+			);
+			name = Banner;
+			sourceTree = "<group>";
+		};
+		196E5AB0186BDC7C006F25DF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				196E5AB7186BE9F0006F25DF /* RELibraryAPI.h */,
+				196E5AB8186BE9F0006F25DF /* RELibraryAPI.m */,
+				196E5AB4186BE6FE006F25DF /* REHTTPClient.h */,
+				196E5AB5186BE6FE006F25DF /* REHTTPClient.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		196E5AC2186C3771006F25DF /* CityList */ = {
+			isa = PBXGroup;
+			children = (
+				196E5AC3186C37A2006F25DF /* RECityListSectionHeaderView.h */,
+				196E5AC4186C37A2006F25DF /* RECityListSectionHeaderView.m */,
+				19E253ED186D1DA0004B33A5 /* RECityListCell.h */,
+				19E253EE186D1DA0004B33A5 /* RECityListCell.m */,
+			);
+			name = CityList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,9 +370,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				190AE0B0186974E70071E892 /* CityInfo.json in Resources */,
 				1942D9501869619F00B87C64 /* InfoPlist.strings in Resources */,
 				1942D9581869619F00B87C64 /* Images.xcassets in Resources */,
+				196E5AC1186C2156006F25DF /* bar_button_back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,8 +424,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E253EF186D1DA0004B33A5 /* RECityListCell.m in Sources */,
+				196E5ABF186C1393006F25DF /* RECityListViewController.m in Sources */,
 				1942D9521869619F00B87C64 /* main.m in Sources */,
+				196E5AAF186BD387006F25DF /* REAddCarViewController.m in Sources */,
 				1942D9561869619F00B87C64 /* REAppDelegate.m in Sources */,
+				196E5ABC186BFCB7006F25DF /* RECity.m in Sources */,
+				196E5AAC186BCDA3006F25DF /* REBanner.m in Sources */,
+				196E5AA5186BC934006F25DF /* CNSBannerView.m in Sources */,
+				196E5AC5186C37A2006F25DF /* RECityListSectionHeaderView.m in Sources */,
+				196E5AB6186BE6FE006F25DF /* REHTTPClient.m in Sources */,
+				196E5AA6186BC934006F25DF /* CNSPageControl.m in Sources */,
+				196E5AB9186BE9F0006F25DF /* RELibraryAPI.m in Sources */,
+				196E5AA9186BCABC006F25DF /* REHomePageViewController.m in Sources */,
 				190AE0BE1869781F0071E892 /* RENavigationController.m in Sources */,
 				190AE0BB186977F90071E892 /* REViewController.m in Sources */,
 			);

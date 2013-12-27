@@ -7,13 +7,16 @@
 //
 
 #import "REAppDelegate.h"
+#import "REHomePageViewController.h"
 
 @implementation REAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    REHomePageViewController *homePageVC = [[REHomePageViewController alloc] init];
+    RENavigationController *navc = [[RENavigationController alloc] initWithRootViewController:homePageVC];
+    self.window.rootViewController = navc;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
