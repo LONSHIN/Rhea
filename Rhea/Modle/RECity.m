@@ -23,6 +23,42 @@
     return self;
 }
 
++ (RECity *)defaultCity
+{
+    RECity *city = [[RECity alloc] init];
+    city.name = @"杭州";
+    city.code = @"ZJ_HZ";
+    city.abbreviation = @"浙";
+    city.needEngineCode = NO;
+    city.needRegistCode = NO;
+    
+    return city;
+}
+
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.name forKey:@"kKeyCodeCityName"];
+    [aCoder encodeObject:self.code forKey:@"kKeyCodeCityCode"];
+    [aCoder encodeBool:self.needEngineCode forKey:@"kKeyCodeCityNeedEngineCode"];
+    [aCoder encodeBool:self.needRegistCode forKey:@"kKeyCodeCityNeedRegistCode"];
+    [aCoder encodeObject:self.abbreviation forKey:@"kKeyCodeCityAbbreviation"];
+}
+
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init]) {
+        self.name = [aDecoder decodeObjectForKey:@"kKeyCodeCityName"];
+        self.code = [aDecoder decodeObjectForKey:@"kKeyCodeCityCode"];
+        self.needRegistCode = [aDecoder decodeBoolForKey:@"kKeyCodeCityNeedRegistCode"];
+        self.needRegistCode = [aDecoder decodeBoolForKey:@"kKeyCodeCityNeedRegistCode"];
+        self.abbreviation = [aDecoder decodeObjectForKey:@"kKeyCodeCityAbbreviation"];
+    }
+    return self;
+}
+
+
 @end
 
 

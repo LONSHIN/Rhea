@@ -32,6 +32,9 @@
 		196E5ABF186C1393006F25DF /* RECityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5ABE186C1393006F25DF /* RECityListViewController.m */; };
 		196E5AC1186C2156006F25DF /* bar_button_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 196E5AC0186C2156006F25DF /* bar_button_back@2x.png */; };
 		196E5AC5186C37A2006F25DF /* RECityListSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AC4186C37A2006F25DF /* RECityListSectionHeaderView.m */; };
+		1985C81A18715D290005BB09 /* RECar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1985C81918715D290005BB09 /* RECar.m */; };
+		1985C81D187177B00005BB09 /* RECarType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1985C81C187177AF0005BB09 /* RECarType.m */; };
+		1985C81F18717A130005BB09 /* CarType.json in Resources */ = {isa = PBXBuildFile; fileRef = 1985C81E18717A130005BB09 /* CarType.json */; };
 		19E253EF186D1DA0004B33A5 /* RECityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E253EE186D1DA0004B33A5 /* RECityListCell.m */; };
 		CA728681C25B4FB39445E89A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9760B72B54144719A24463C8 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -89,6 +92,11 @@
 		196E5AC0186C2156006F25DF /* bar_button_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar_button_back@2x.png"; sourceTree = "<group>"; };
 		196E5AC3186C37A2006F25DF /* RECityListSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECityListSectionHeaderView.h; sourceTree = "<group>"; };
 		196E5AC4186C37A2006F25DF /* RECityListSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECityListSectionHeaderView.m; sourceTree = "<group>"; };
+		1985C81818715D290005BB09 /* RECar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECar.h; sourceTree = "<group>"; };
+		1985C81918715D290005BB09 /* RECar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECar.m; sourceTree = "<group>"; };
+		1985C81B187177AF0005BB09 /* RECarType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECarType.h; sourceTree = "<group>"; };
+		1985C81C187177AF0005BB09 /* RECarType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECarType.m; sourceTree = "<group>"; };
+		1985C81E18717A130005BB09 /* CarType.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CarType.json; sourceTree = "<group>"; };
 		19E253ED186D1DA0004B33A5 /* RECityListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECityListCell.h; sourceTree = "<group>"; };
 		19E253EE186D1DA0004B33A5 /* RECityListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECityListCell.m; sourceTree = "<group>"; };
 		368222D05494443C864538E2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -133,6 +141,7 @@
 		190AE0B4186976CA0071E892 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1985C81E18717A130005BB09 /* CarType.json */,
 				196E5AC0186C2156006F25DF /* bar_button_back@2x.png */,
 				1942D9571869619F00B87C64 /* Images.xcassets */,
 			);
@@ -155,6 +164,10 @@
 				196E5AAB186BCDA3006F25DF /* REBanner.m */,
 				196E5ABA186BFCB7006F25DF /* RECity.h */,
 				196E5ABB186BFCB7006F25DF /* RECity.m */,
+				1985C81818715D290005BB09 /* RECar.h */,
+				1985C81918715D290005BB09 /* RECar.m */,
+				1985C81B187177AF0005BB09 /* RECarType.h */,
+				1985C81C187177AF0005BB09 /* RECarType.m */,
 			);
 			path = Modle;
 			sourceTree = "<group>";
@@ -370,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1985C81F18717A130005BB09 /* CarType.json in Resources */,
 				1942D9501869619F00B87C64 /* InfoPlist.strings in Resources */,
 				1942D9581869619F00B87C64 /* Images.xcassets in Resources */,
 				196E5AC1186C2156006F25DF /* bar_button_back@2x.png in Resources */,
@@ -436,9 +450,11 @@
 				196E5AB6186BE6FE006F25DF /* REHTTPClient.m in Sources */,
 				196E5AA6186BC934006F25DF /* CNSPageControl.m in Sources */,
 				196E5AB9186BE9F0006F25DF /* RELibraryAPI.m in Sources */,
+				1985C81D187177B00005BB09 /* RECarType.m in Sources */,
 				196E5AA9186BCABC006F25DF /* REHomePageViewController.m in Sources */,
 				190AE0BE1869781F0071E892 /* RENavigationController.m in Sources */,
 				190AE0BB186977F90071E892 /* REViewController.m in Sources */,
+				1985C81A18715D290005BB09 /* RECar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

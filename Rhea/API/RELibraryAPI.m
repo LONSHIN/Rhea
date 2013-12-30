@@ -10,6 +10,7 @@
 #import "REHTTPClient.h"
 #import "RECity.h"
 
+
 @implementation RELibraryAPI
 
 + (void)getCitysWithSuccesseedBlock:(void (^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlock
@@ -45,9 +46,21 @@
 }
 
 
++ (NSArray *)getAllSavedCar
+{
+    return [NSArray arrayWithContentsOfFile:kCarPath];
+}
 
 
-
+- (BOOL)saveCar:(RECar *)car
+{
+    NSMutableArray *carList = [[NSMutableArray alloc] initWithArray:[NSArray arrayWithContentsOfFile:kCarPath]];
+    if (carList == nil) {
+        carList = [[NSMutableArray alloc] init];
+    }
+    [carList addObject:car];
+    return [carList writeToFile:kCarPath atomically:YES];
+}
 
 
 @end

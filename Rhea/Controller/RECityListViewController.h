@@ -7,7 +7,12 @@
 //
 
 #import "REViewController.h"
+#import "RECity.h"
+
+typedef void(^RECityListSelectCityBlock)(RECity *selectCity);
 
 @interface RECityListViewController : REViewController
+
+- (id)initWithSelectCityBlcok:(RECityListSelectCityBlock)selectCityBlcok;
 
 @end

@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RECar.h"
 
 @interface RELibraryAPI : NSObject
 
 + (void)getCitysWithSuccesseedBlock:(void(^)(NSArray *citys))succeededBlock failedBlock:(REFailedBlock)failedBlock;
+
++ (NSArray *)getAllSavedCar;
+- (BOOL)saveCar:(RECar *)car;
 
 @end

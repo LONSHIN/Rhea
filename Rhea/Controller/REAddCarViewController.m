@@ -9,11 +9,14 @@
 #import "REAddCarViewController.h"
 #import "RECity.h"
 #import "RECityListViewController.h"
+#import "RECar.h"
+
 
 @interface REAddCarViewController ()
 <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) RECar *currentEditCar;
 
 @end
 
@@ -26,6 +29,7 @@
     [super viewDidLoad];
     
     [self configTableView];
+    self.currentEditCar = [[RECar alloc] init];
 }
 
 
@@ -64,14 +68,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
     }
     
     NSInteger row = [indexPath row];
     
     if (row == 0) {
-        NSMutableAttributedString *attributiString = [[NSMutableAttributedString alloc] initWithString:@"查询地[必填]"];
+        NSMutableAttributedString *attributiString = [[NSMutableAttributedString alloc] initWithString:@"查询地[必填]："];
         cell.textLabel.attributedText = attributiString;
+        cell.detailTextLabel.text = self.currentEditCar.city.name;
+    }else if (row == 1) {
+        
     }
 
     return cell;
@@ -86,7 +93,11 @@
     
     NSInteger row = [indexPath row];
     if (row == 0) {
-        RECityListViewController *cityListVC = [[RECityListViewController alloc] init];
+        __weak REAddCarViewController *weakSelf = self;
+        RECityListViewController *cityListVC = [[RECityListViewController alloc] initWithSelectCityBlcok:^(RECity *selectCity) {
+            weakSelf.currentEditCar.city = selectCity;
+            [weakSelf.tableView reloadData];
+        }];
         [self.navigationController pushViewController:cityListVC animated:YES];
     }
 }

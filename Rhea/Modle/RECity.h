@@ -18,6 +18,7 @@
 @property (nonatomic, assign) BOOL status;
 
 - (id)initWithInfo:(NSDictionary *)dict;
++ (RECity *)defaultCity;
 
 @end
 

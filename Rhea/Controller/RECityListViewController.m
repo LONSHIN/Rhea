@@ -18,12 +18,22 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *citys;
 @property (nonatomic, assign) NSInteger currentOpenedSectionIndex;
+@property (nonatomic, strong) RECityListSelectCityBlock selectCityBlock;
 
 @end
 
 
 
 @implementation RECityListViewController
+
+- (id)initWithSelectCityBlcok:(RECityListSelectCityBlock)selectCityBlcok
+{
+    if (self = [super init]) {
+        self.selectCityBlock = selectCityBlcok;
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad
 {
@@ -107,8 +117,17 @@
         cell = [[RECityListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.backgroundColor = [UIColor yellowColor];
+    NSArray *provinceCitys = [[self.citys objectAtIndex:indexPath.section] objectForKey:kKeyCitysProvinceCity];
+    [cell layoutWithSection:indexPath.section citys:provinceCitys];
     
+    __weak RECityListViewController *weakSelf = self;
+    cell.tappedItemBlock = ^(NSInteger index){
+        if (weakSelf.selectCityBlock != nil) {
+            RECity *city = [provinceCitys objectAtIndex:index];
+            weakSelf.selectCityBlock(city);
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }
+    };
     return cell;
 }
 
