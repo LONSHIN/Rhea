@@ -8,19 +8,46 @@
 
 #import "REAppDelegate.h"
 #import "REHomePageViewController.h"
+#import "REDetailListViewController.h"
+#import "REDetailViewController.h"
+#import "WXApi.h"
+
+@interface REAppDelegate ()
+<WXApiDelegate>
+
+@end
+
 
 @implementation REAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    REHomePageViewController *homePageVC = [[REHomePageViewController alloc] init];
-    RENavigationController *navc = [[RENavigationController alloc] initWithRootViewController:homePageVC];
+    
+    [WXApi registerApp:kWechatAppID];
+    
+    REHomePageViewController *vc = [[REHomePageViewController alloc] init];
+   
+//    REDetailListViewController *vc = [[REDetailListViewController alloc] init];
+//    REDetailViewController *vc = [[REDetailViewController alloc] initWithCar:nil];
+    RENavigationController *navc = [[RENavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navc;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -48,5 +75,20 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+#pragma mark - WXApiDelegate
+
+- (void)onReq:(BaseReq *)req
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationWeChatRequest object:nil userInfo:@{kNotificationUserInfoKeyWeChatRequest: req}];
+}
+
+
+- (void)onResp:(BaseResp *)resp
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationWeChatResponse object:nil userInfo:@{kNotificationUserInfoKeyWeChatResponse: resp}];
+}
+
 
 @end

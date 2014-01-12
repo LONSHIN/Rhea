@@ -47,8 +47,8 @@
     __weak REViewController *weakSelf = self;
     [RACObserve(self, showType) subscribeNext:^(NSString *newName) {
         if (weakSelf.showType != REViewControllerShowTypeUnkonwn) {
-            UIButton *backButton = [UIButton buttonWithImageName:@"bar_button_back"
-                                            highlightedImageName:nil
+            UIButton *backButton = [UIButton buttonWithImageName:@"item_back_normal"
+                                            highlightedImageName:@"item_back_highlighted"
                                                            title:@""
                                                           target:weakSelf
                                                           action:@selector(goBack)];

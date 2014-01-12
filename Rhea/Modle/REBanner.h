@@ -16,4 +16,6 @@
 @property (nonatomic, copy) NSString * title;
 @property (nonatomic, copy) NSString * content;
 
+- (id)initWithInfo:(NSDictionary *)info;
+
 @end

@@ -39,6 +39,7 @@
 {
     [super viewDidLoad];
     self.currentOpenedSectionIndex = NSNotFound;
+    self.title = @"城市选择";
     [self configTableView];
     [self loadAllCitys];
 }

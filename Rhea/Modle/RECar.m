@@ -18,14 +18,25 @@
     return _city;
 }
 
+
+- (RECarType *)carType
+{
+    if (_carType == nil) {
+        _carType = [RECarType defaultCarType];
+    }
+    return _carType;
+}
+
+
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.engineCode forKey:@"kKeyCodeCarEngineCode"];
     [aCoder encodeObject:self.vinCode forKey:@"kKeyCodeCarVinCode"];
     [aCoder encodeObject:self.registCode forKey:@"kKeyCodeCarRegistCode"];
     [aCoder encodeObject:self.licensePlateNumber forKey:@"kKeyCodeCarLicensePlateNumber"];
-    [aCoder encodeObject:self.carTypeCode forKey:@"kKeyCodeCarTypeCode"];
+    [aCoder encodeObject:self.carType forKey:@"kKeyCodeCarType"];
     [aCoder encodeObject:self.city forKey:@"kKeyCodeCarCity"];
+    [aCoder encodeObject:self.intactVinCode forKey:@"kKeyCodeIntactVinCode"];
 }
 
 
@@ -36,8 +47,9 @@
         self.vinCode = [aDecoder decodeObjectForKey:@"kKeyCodeCarVinCode"];
         self.registCode = [aDecoder decodeObjectForKey:@"kKeyCodeCarRegistCode"];
         self.licensePlateNumber = [aDecoder decodeObjectForKey:@"kKeyCodeCarLicensePlateNumber"];
-        self.carTypeCode = [aDecoder decodeObjectForKey:@"kKeyCodeCarTypeCode"];
+        self.carType = [aDecoder decodeObjectForKey:@"kKeyCodeCarType"];
         self.city = [aDecoder decodeObjectForKey:@"kKeyCodeCarCity"];
+        self.intactVinCode = [aDecoder decodeObjectForKey:@"kKeyCodeIntactVinCode"];
     }
     return self;
 }

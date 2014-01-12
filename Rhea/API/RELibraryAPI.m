@@ -9,6 +9,9 @@
 #import "RELibraryAPI.h"
 #import "REHTTPClient.h"
 #import "RECity.h"
+#import "RERecallInfo.h"
+#import "REBreakRulesInfo.h"
+#import "REBanner.h"
 
 
 @implementation RELibraryAPI
@@ -46,21 +49,105 @@
 }
 
 
+#pragma mark -
+
 + (NSArray *)getAllSavedCar
 {
-    return [NSArray arrayWithContentsOfFile:kCarPath];
+//    NSMutableArray *test = [[NSMutableArray alloc] init];
+//    for (NSInteger i = 0; i < 3; i++) {
+//        RECar *car = [[RECar alloc] init];
+//        car.licensePlateNumber = [NSString stringWithFormat:@"%@%d",@"TigerTest", i];
+//        [test addObject:car];
+//    }
+//    
+//    return test;
+    return [NSKeyedUnarchiver unarchiveObjectWithFile:kCarPath];
 }
 
 
-- (BOOL)saveCar:(RECar *)car
++ (NSInteger)carCount
 {
-    NSMutableArray *carList = [[NSMutableArray alloc] initWithArray:[NSArray arrayWithContentsOfFile:kCarPath]];
+    return [[RELibraryAPI getAllSavedCar] count];
+}
+
+
++ (BOOL)saveCar:(RECar *)car
+{
+    NSMutableArray *carList = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:kCarPath]];
     if (carList == nil) {
         carList = [[NSMutableArray alloc] init];
     }
     [carList addObject:car];
-    return [carList writeToFile:kCarPath atomically:YES];
+    return [NSKeyedArchiver archiveRootObject:carList toFile:kCarPath];
 }
 
+
++ (void)getCarTypeList:(void(^)(NSArray *))callBack
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"CarType" ofType:@"json"];
+    NSString *responseObject = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSArray *response = [NSJSONSerialization JSONObjectWithData:[responseObject dataUsingEncoding:NSUTF8StringEncoding]
+                                                              options: NSJSONReadingMutableContainers
+                                                                error: nil];
+    NSMutableArray *carTypeArray = [[NSMutableArray alloc] init];
+    for (NSDictionary *info in response) {
+        RECarType *carType = [[RECarType alloc] initWithInfo:info];
+        [carTypeArray addObject:carType];
+    }
+    
+    callBack(carTypeArray);
+}
+
+
+#pragma mark - 
+
++ (void)getRecallInfoWithVinCode:(NSString *)vinCode succeededBlock:(void (^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlock
+{
+    [[REHTTPClient standerdRecallClient] getRecallDataWithVinCode:vinCode succeededBlcok:^(NSArray *responseObject) {
+         NSMutableArray *recallInfoArray = [[NSMutableArray alloc] init];
+        for (NSDictionary *info in responseObject) {
+            RERecallInfo *recallInfo = [[RERecallInfo alloc] initWithInfo:info];
+            [recallInfoArray addObject:recallInfo];
+        }
+        succeededBlock(recallInfoArray);
+    } failedBlock:^(NSError *error) {
+        failedBlock(error);
+    }];
+}
+
+
+#pragma mark - 
+
++ (void)getBreakRulesInfoWithCar:(RECar *)car succeededBlock:(void (^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlcok
+{
+    [[REHTTPClient standardClient] getBreakRulesDataWithCar:car succeededBlock:^(NSDictionary *responseObject) {
+        
+        NSMutableArray *breakRulesInfoArray = [[NSMutableArray alloc] init];
+        for (NSDictionary *info in responseObject) {
+            REBreakRulesInfo  *breakRulesInfo = [[REBreakRulesInfo alloc] initWithInfo:info];
+            [breakRulesInfoArray addObject:breakRulesInfo];
+        }
+        succeededBlock(breakRulesInfoArray);
+    } failedBlock:^(NSError *error) {
+        failedBlcok(error);
+    }];
+}
+
+
+#pragma mark - 
+
++ (void)getBannerWithSucceededBlock:(void (^)(NSArray *bannerList))succeededBlock failedBlock:(REFailedBlock)failedBlock
+{
+    [[REHTTPClient standardBannerClient] getBannerDataWithSucceededBlock:^(NSArray *responseObject) {
+        NSMutableArray *bannerArray = [[NSMutableArray alloc] init];
+        for (NSDictionary *info in responseObject) {
+            REBanner *banner = [[REBanner alloc] initWithInfo:info];
+            [bannerArray addObject:banner];
+        }
+        succeededBlock(bannerArray);
+    } failedBlock:^(NSError *error) {
+        failedBlock(error);
+    }];
+}
 
 @end

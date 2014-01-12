@@ -17,8 +17,12 @@
         self.code = [dict objectForKey:@"city_code"];
         self.abbreviation = [dict objectForKey:@"abbr"];
         self.needRegistCode = [[dict objectForKey:@"registno"] boolValue];
-        self.needEngineCode = [[dict objectForKey:@"engineno"] boolValue];
+        self.needEngineCode = [[dict objectForKey:@"engine"] boolValue];
+        self.needVinCode = [[dict objectForKey:@"class"] boolValue];
         self.status = [[dict objectForKey:@"status"] boolValue];
+        self.engineCodeNumber = [[dict objectForKey:@"engineno"] integerValue];
+        self.vinCodeNumber = [[dict objectForKey:@"classno"] integerValue];
+        self.registCodeNumber = [[dict objectForKey:@"registno"] integerValue];
     }
     return self;
 }
@@ -31,6 +35,8 @@
     city.abbreviation = @"浙";
     city.needEngineCode = NO;
     city.needRegistCode = NO;
+    city.needVinCode = YES;
+    city.vinCodeNumber = 6;
     
     return city;
 }
@@ -43,6 +49,9 @@
     [aCoder encodeBool:self.needEngineCode forKey:@"kKeyCodeCityNeedEngineCode"];
     [aCoder encodeBool:self.needRegistCode forKey:@"kKeyCodeCityNeedRegistCode"];
     [aCoder encodeObject:self.abbreviation forKey:@"kKeyCodeCityAbbreviation"];
+    [aCoder encodeInteger:self.engineCodeNumber forKey:@"kKeyCodeCityEngineCodeNumber"];
+    [aCoder encodeInteger:self.registCodeNumber forKey:@"kKeyCodeCityRegistCodeNumber"];
+    [aCoder encodeInteger:self.vinCodeNumber forKey:@"kKeyCodeCityVinCodeNumber"];
 }
 
 
@@ -54,6 +63,9 @@
         self.needRegistCode = [aDecoder decodeBoolForKey:@"kKeyCodeCityNeedRegistCode"];
         self.needRegistCode = [aDecoder decodeBoolForKey:@"kKeyCodeCityNeedRegistCode"];
         self.abbreviation = [aDecoder decodeObjectForKey:@"kKeyCodeCityAbbreviation"];
+        self.engineCodeNumber = [aDecoder decodeIntegerForKey:@"kKeyCodeCityEngineCodeNumber"];
+        self.registCodeNumber = [aDecoder decodeIntegerForKey:@"kKeyCodeCityRegistCodeNumber"];
+        self.vinCodeNumber = [aDecoder decodeIntegerForKey:@"kKeyCodeCityVinCodeNumber"];
     }
     return self;
 }

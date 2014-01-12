@@ -11,6 +11,9 @@
 @interface RECarType : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *carTypeCode;
+@property (nonatomic, copy) NSString *typeCode;
+
+- (id)initWithInfo:(NSDictionary *)info;
++ (RECarType *)defaultCarType;
 
 @end

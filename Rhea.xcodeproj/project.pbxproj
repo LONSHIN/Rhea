@@ -9,6 +9,33 @@
 /* Begin PBXBuildFile section */
 		190AE0BB186977F90071E892 /* REViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190AE0BA186977F90071E892 /* REViewController.m */; };
 		190AE0BE1869781F0071E892 /* RENavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190AE0BD1869781F0071E892 /* RENavigationController.m */; };
+		192FD107187E3D86005D1A3C /* REBreakRulesInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FD106187E3D86005D1A3C /* REBreakRulesInfo.m */; };
+		192FD10A187E4EC1005D1A3C /* REDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FD109187E4EC1005D1A3C /* REDetailViewController.m */; };
+		192FD10D187E7F99005D1A3C /* REWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FD10C187E7F99005D1A3C /* REWebViewController.m */; };
+		192FD114187E8019005D1A3C /* webview_back_hithlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD10E187E8019005D1A3C /* webview_back_hithlighted@2x.png */; };
+		192FD115187E8019005D1A3C /* webview_back_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD10F187E8019005D1A3C /* webview_back_normal@2x.png */; };
+		192FD116187E8019005D1A3C /* webview_forward_highlithed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD110187E8019005D1A3C /* webview_forward_highlithed@2x.png */; };
+		192FD117187E8019005D1A3C /* webview_forward_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD111187E8019005D1A3C /* webview_forward_normal@2x.png */; };
+		192FD118187E8019005D1A3C /* webview_refresh_hithlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD112187E8019005D1A3C /* webview_refresh_hithlighted@2x.png */; };
+		192FD119187E8019005D1A3C /* webview_refresh_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD113187E8019005D1A3C /* webview_refresh_normal@2x.png */; };
+		192FD126187E874C005D1A3C /* banner_image_place_holder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD11A187E874C005D1A3C /* banner_image_place_holder@2x.png */; };
+		192FD127187E874C005D1A3C /* banner_place_holder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD11B187E874C005D1A3C /* banner_place_holder@2x.png */; };
+		192FD128187E874C005D1A3C /* home_page_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD11C187E874C005D1A3C /* home_page_logo@2x.png */; };
+		192FD12B187E874C005D1A3C /* item_back_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD11F187E874C005D1A3C /* item_back_highlighted@2x.png */; };
+		192FD12C187E874C005D1A3C /* item_back_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD120187E874C005D1A3C /* item_back_normal@2x.png */; };
+		192FD12D187E874C005D1A3C /* item_more_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD121187E874C005D1A3C /* item_more_highlighted@2x.png */; };
+		192FD12E187E874C005D1A3C /* item_more_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD122187E874C005D1A3C /* item_more_normal@2x.png */; };
+		192FD12F187E874C005D1A3C /* more_car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD123187E874C005D1A3C /* more_car@2x.png */; };
+		192FD130187E874C005D1A3C /* navigation_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD124187E874C005D1A3C /* navigation_bar@2x.png */; };
+		192FD131187E874C005D1A3C /* orange_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD125187E874C005D1A3C /* orange_button@2x.png */; };
+		192FD134187E88F9005D1A3C /* REMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FD133187E88F9005D1A3C /* REMoreViewController.m */; };
+		192FD138187E897B005D1A3C /* CNSShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FD137187E897B005D1A3C /* CNSShareManager.m */; };
+		192FD13D187E8981005D1A3C /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 192FD13A187E8981005D1A3C /* libWeChatSDK.a */; };
+		192FD140187E901F005D1A3C /* REHomePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FD13F187E901F005D1A3C /* REHomePageCell.m */; };
+		193CD72218752916009FF3E3 /* RESelectCarTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CD72118752916009FF3E3 /* RESelectCarTypeViewController.m */; };
+		193CD725187563D5009FF3E3 /* RERecallInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CD724187563D5009FF3E3 /* RERecallInfo.m */; };
+		193CD72B1875679A009FF3E3 /* APOSwitchPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CD72A1875679A009FF3E3 /* APOSwitchPageView.m */; };
+		193CD72E1875680F009FF3E3 /* REDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CD72D1875680F009FF3E3 /* REDetailListViewController.m */; };
 		1942D9461869619F00B87C64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1942D9451869619F00B87C64 /* Foundation.framework */; };
 		1942D9481869619F00B87C64 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1942D9471869619F00B87C64 /* CoreGraphics.framework */; };
 		1942D94A1869619F00B87C64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1942D9491869619F00B87C64 /* UIKit.framework */; };
@@ -30,12 +57,14 @@
 		196E5AB9186BE9F0006F25DF /* RELibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AB8186BE9F0006F25DF /* RELibraryAPI.m */; };
 		196E5ABC186BFCB7006F25DF /* RECity.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5ABB186BFCB7006F25DF /* RECity.m */; };
 		196E5ABF186C1393006F25DF /* RECityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5ABE186C1393006F25DF /* RECityListViewController.m */; };
-		196E5AC1186C2156006F25DF /* bar_button_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 196E5AC0186C2156006F25DF /* bar_button_back@2x.png */; };
 		196E5AC5186C37A2006F25DF /* RECityListSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AC4186C37A2006F25DF /* RECityListSectionHeaderView.m */; };
+		1974225918729CF8009B72EF /* REInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974225818729CF8009B72EF /* REInputCell.m */; };
 		1985C81A18715D290005BB09 /* RECar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1985C81918715D290005BB09 /* RECar.m */; };
 		1985C81D187177B00005BB09 /* RECarType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1985C81C187177AF0005BB09 /* RECarType.m */; };
 		1985C81F18717A130005BB09 /* CarType.json in Resources */ = {isa = PBXBuildFile; fileRef = 1985C81E18717A130005BB09 /* CarType.json */; };
 		19E253EF186D1DA0004B33A5 /* RECityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E253EE186D1DA0004B33A5 /* RECityListCell.m */; };
+		19EC2F161876A727003D1E7F /* RERecallDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EC2F151876A727003D1E7F /* RERecallDetailViewController.m */; };
+		19EC2F191876A75A003D1E7F /* REBreakRulesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EC2F181876A75A003D1E7F /* REBreakRulesDetailViewController.m */; };
 		CA728681C25B4FB39445E89A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9760B72B54144719A24463C8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +84,45 @@
 		190AE0BA186977F90071E892 /* REViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REViewController.m; sourceTree = "<group>"; };
 		190AE0BC1869781F0071E892 /* RENavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RENavigationController.h; sourceTree = "<group>"; };
 		190AE0BD1869781F0071E892 /* RENavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RENavigationController.m; sourceTree = "<group>"; };
+		192FD105187E3D86005D1A3C /* REBreakRulesInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REBreakRulesInfo.h; sourceTree = "<group>"; };
+		192FD106187E3D86005D1A3C /* REBreakRulesInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REBreakRulesInfo.m; sourceTree = "<group>"; };
+		192FD108187E4EC1005D1A3C /* REDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDetailViewController.h; sourceTree = "<group>"; };
+		192FD109187E4EC1005D1A3C /* REDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REDetailViewController.m; sourceTree = "<group>"; };
+		192FD10B187E7F99005D1A3C /* REWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REWebViewController.h; sourceTree = "<group>"; };
+		192FD10C187E7F99005D1A3C /* REWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REWebViewController.m; sourceTree = "<group>"; };
+		192FD10E187E8019005D1A3C /* webview_back_hithlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "webview_back_hithlighted@2x.png"; sourceTree = "<group>"; };
+		192FD10F187E8019005D1A3C /* webview_back_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "webview_back_normal@2x.png"; sourceTree = "<group>"; };
+		192FD110187E8019005D1A3C /* webview_forward_highlithed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "webview_forward_highlithed@2x.png"; sourceTree = "<group>"; };
+		192FD111187E8019005D1A3C /* webview_forward_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "webview_forward_normal@2x.png"; sourceTree = "<group>"; };
+		192FD112187E8019005D1A3C /* webview_refresh_hithlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "webview_refresh_hithlighted@2x.png"; sourceTree = "<group>"; };
+		192FD113187E8019005D1A3C /* webview_refresh_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "webview_refresh_normal@2x.png"; sourceTree = "<group>"; };
+		192FD11A187E874C005D1A3C /* banner_image_place_holder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banner_image_place_holder@2x.png"; sourceTree = "<group>"; };
+		192FD11B187E874C005D1A3C /* banner_place_holder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banner_place_holder@2x.png"; sourceTree = "<group>"; };
+		192FD11C187E874C005D1A3C /* home_page_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_page_logo@2x.png"; sourceTree = "<group>"; };
+		192FD11F187E874C005D1A3C /* item_back_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_back_highlighted@2x.png"; sourceTree = "<group>"; };
+		192FD120187E874C005D1A3C /* item_back_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_back_normal@2x.png"; sourceTree = "<group>"; };
+		192FD121187E874C005D1A3C /* item_more_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_more_highlighted@2x.png"; sourceTree = "<group>"; };
+		192FD122187E874C005D1A3C /* item_more_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_more_normal@2x.png"; sourceTree = "<group>"; };
+		192FD123187E874C005D1A3C /* more_car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_car@2x.png"; sourceTree = "<group>"; };
+		192FD124187E874C005D1A3C /* navigation_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_bar@2x.png"; sourceTree = "<group>"; };
+		192FD125187E874C005D1A3C /* orange_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange_button@2x.png"; sourceTree = "<group>"; };
+		192FD132187E88F9005D1A3C /* REMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMoreViewController.h; sourceTree = "<group>"; };
+		192FD133187E88F9005D1A3C /* REMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REMoreViewController.m; sourceTree = "<group>"; };
+		192FD136187E897B005D1A3C /* CNSShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNSShareManager.h; sourceTree = "<group>"; };
+		192FD137187E897B005D1A3C /* CNSShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNSShareManager.m; sourceTree = "<group>"; };
+		192FD13A187E8981005D1A3C /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		192FD13B187E8981005D1A3C /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		192FD13C187E8981005D1A3C /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		192FD13E187E901F005D1A3C /* REHomePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REHomePageCell.h; sourceTree = "<group>"; };
+		192FD13F187E901F005D1A3C /* REHomePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REHomePageCell.m; sourceTree = "<group>"; };
+		193CD72018752916009FF3E3 /* RESelectCarTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESelectCarTypeViewController.h; sourceTree = "<group>"; };
+		193CD72118752916009FF3E3 /* RESelectCarTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESelectCarTypeViewController.m; sourceTree = "<group>"; };
+		193CD723187563D5009FF3E3 /* RERecallInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RERecallInfo.h; sourceTree = "<group>"; };
+		193CD724187563D5009FF3E3 /* RERecallInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RERecallInfo.m; sourceTree = "<group>"; };
+		193CD7291875679A009FF3E3 /* APOSwitchPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APOSwitchPageView.h; sourceTree = "<group>"; };
+		193CD72A1875679A009FF3E3 /* APOSwitchPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APOSwitchPageView.m; sourceTree = "<group>"; };
+		193CD72C1875680F009FF3E3 /* REDetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDetailListViewController.h; sourceTree = "<group>"; };
+		193CD72D1875680F009FF3E3 /* REDetailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REDetailListViewController.m; sourceTree = "<group>"; };
 		1942D9421869619F00B87C64 /* Rhea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rhea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1942D9451869619F00B87C64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1942D9471869619F00B87C64 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,9 +157,10 @@
 		196E5ABB186BFCB7006F25DF /* RECity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECity.m; sourceTree = "<group>"; };
 		196E5ABD186C1393006F25DF /* RECityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECityListViewController.h; sourceTree = "<group>"; };
 		196E5ABE186C1393006F25DF /* RECityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECityListViewController.m; sourceTree = "<group>"; };
-		196E5AC0186C2156006F25DF /* bar_button_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar_button_back@2x.png"; sourceTree = "<group>"; };
 		196E5AC3186C37A2006F25DF /* RECityListSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECityListSectionHeaderView.h; sourceTree = "<group>"; };
 		196E5AC4186C37A2006F25DF /* RECityListSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECityListSectionHeaderView.m; sourceTree = "<group>"; };
+		1974225718729CF8009B72EF /* REInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REInputCell.h; sourceTree = "<group>"; };
+		1974225818729CF8009B72EF /* REInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REInputCell.m; sourceTree = "<group>"; };
 		1985C81818715D290005BB09 /* RECar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECar.h; sourceTree = "<group>"; };
 		1985C81918715D290005BB09 /* RECar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECar.m; sourceTree = "<group>"; };
 		1985C81B187177AF0005BB09 /* RECarType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECarType.h; sourceTree = "<group>"; };
@@ -99,6 +168,10 @@
 		1985C81E18717A130005BB09 /* CarType.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CarType.json; sourceTree = "<group>"; };
 		19E253ED186D1DA0004B33A5 /* RECityListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECityListCell.h; sourceTree = "<group>"; };
 		19E253EE186D1DA0004B33A5 /* RECityListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECityListCell.m; sourceTree = "<group>"; };
+		19EC2F141876A727003D1E7F /* RERecallDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RERecallDetailViewController.h; sourceTree = "<group>"; };
+		19EC2F151876A727003D1E7F /* RERecallDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RERecallDetailViewController.m; sourceTree = "<group>"; };
+		19EC2F171876A75A003D1E7F /* REBreakRulesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REBreakRulesDetailViewController.h; sourceTree = "<group>"; };
+		19EC2F181876A75A003D1E7F /* REBreakRulesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REBreakRulesDetailViewController.m; sourceTree = "<group>"; };
 		368222D05494443C864538E2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		9760B72B54144719A24463C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,6 +185,7 @@
 				1942D94A1869619F00B87C64 /* UIKit.framework in Frameworks */,
 				1942D9461869619F00B87C64 /* Foundation.framework in Frameworks */,
 				CA728681C25B4FB39445E89A /* libPods.a in Frameworks */,
+				192FD13D187E8981005D1A3C /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +216,22 @@
 			isa = PBXGroup;
 			children = (
 				1985C81E18717A130005BB09 /* CarType.json */,
-				196E5AC0186C2156006F25DF /* bar_button_back@2x.png */,
+				192FD10E187E8019005D1A3C /* webview_back_hithlighted@2x.png */,
+				192FD10F187E8019005D1A3C /* webview_back_normal@2x.png */,
+				192FD110187E8019005D1A3C /* webview_forward_highlithed@2x.png */,
+				192FD111187E8019005D1A3C /* webview_forward_normal@2x.png */,
+				192FD112187E8019005D1A3C /* webview_refresh_hithlighted@2x.png */,
+				192FD113187E8019005D1A3C /* webview_refresh_normal@2x.png */,
+				192FD11A187E874C005D1A3C /* banner_image_place_holder@2x.png */,
+				192FD11B187E874C005D1A3C /* banner_place_holder@2x.png */,
+				192FD11C187E874C005D1A3C /* home_page_logo@2x.png */,
+				192FD11F187E874C005D1A3C /* item_back_highlighted@2x.png */,
+				192FD120187E874C005D1A3C /* item_back_normal@2x.png */,
+				192FD121187E874C005D1A3C /* item_more_highlighted@2x.png */,
+				192FD122187E874C005D1A3C /* item_more_normal@2x.png */,
+				192FD123187E874C005D1A3C /* more_car@2x.png */,
+				192FD124187E874C005D1A3C /* navigation_bar@2x.png */,
+				192FD125187E874C005D1A3C /* orange_button@2x.png */,
 				1942D9571869619F00B87C64 /* Images.xcassets */,
 			);
 			path = Resource;
@@ -153,6 +242,12 @@
 			children = (
 				196E5AC2186C3771006F25DF /* CityList */,
 				196E5AA0186BC928006F25DF /* Banner */,
+				1974225718729CF8009B72EF /* REInputCell.h */,
+				1974225818729CF8009B72EF /* REInputCell.m */,
+				193CD7291875679A009FF3E3 /* APOSwitchPageView.h */,
+				193CD72A1875679A009FF3E3 /* APOSwitchPageView.m */,
+				192FD13E187E901F005D1A3C /* REHomePageCell.h */,
+				192FD13F187E901F005D1A3C /* REHomePageCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +263,10 @@
 				1985C81918715D290005BB09 /* RECar.m */,
 				1985C81B187177AF0005BB09 /* RECarType.h */,
 				1985C81C187177AF0005BB09 /* RECarType.m */,
+				193CD723187563D5009FF3E3 /* RERecallInfo.h */,
+				193CD724187563D5009FF3E3 /* RERecallInfo.m */,
+				192FD105187E3D86005D1A3C /* REBreakRulesInfo.h */,
+				192FD106187E3D86005D1A3C /* REBreakRulesInfo.m */,
 			);
 			path = Modle;
 			sourceTree = "<group>";
@@ -182,6 +281,18 @@
 				196E5AAE186BD387006F25DF /* REAddCarViewController.m */,
 				196E5ABD186C1393006F25DF /* RECityListViewController.h */,
 				196E5ABE186C1393006F25DF /* RECityListViewController.m */,
+				193CD72018752916009FF3E3 /* RESelectCarTypeViewController.h */,
+				193CD72118752916009FF3E3 /* RESelectCarTypeViewController.m */,
+				193CD72C1875680F009FF3E3 /* REDetailListViewController.h */,
+				193CD72D1875680F009FF3E3 /* REDetailListViewController.m */,
+				192FD108187E4EC1005D1A3C /* REDetailViewController.h */,
+				192FD109187E4EC1005D1A3C /* REDetailViewController.m */,
+				19EC2F141876A727003D1E7F /* RERecallDetailViewController.h */,
+				19EC2F151876A727003D1E7F /* RERecallDetailViewController.m */,
+				19EC2F171876A75A003D1E7F /* REBreakRulesDetailViewController.h */,
+				19EC2F181876A75A003D1E7F /* REBreakRulesDetailViewController.m */,
+				192FD132187E88F9005D1A3C /* REMoreViewController.h */,
+				192FD133187E88F9005D1A3C /* REMoreViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,8 +304,30 @@
 				190AE0BA186977F90071E892 /* REViewController.m */,
 				190AE0BC1869781F0071E892 /* RENavigationController.h */,
 				190AE0BD1869781F0071E892 /* RENavigationController.m */,
+				192FD10B187E7F99005D1A3C /* REWebViewController.h */,
+				192FD10C187E7F99005D1A3C /* REWebViewController.m */,
 			);
 			name = Basic;
+			sourceTree = "<group>";
+		};
+		192FD135187E895B005D1A3C /* SNS */ = {
+			isa = PBXGroup;
+			children = (
+				192FD139187E8981005D1A3C /* WeChatSDK */,
+				192FD136187E897B005D1A3C /* CNSShareManager.h */,
+				192FD137187E897B005D1A3C /* CNSShareManager.m */,
+			);
+			name = SNS;
+			sourceTree = "<group>";
+		};
+		192FD139187E8981005D1A3C /* WeChatSDK */ = {
+			isa = PBXGroup;
+			children = (
+				192FD13A187E8981005D1A3C /* libWeChatSDK.a */,
+				192FD13B187E8981005D1A3C /* WXApi.h */,
+				192FD13C187E8981005D1A3C /* WXApiObject.h */,
+			);
+			path = WeChatSDK;
 			sourceTree = "<group>";
 		};
 		1942D9391869619E00B87C64 = {
@@ -286,6 +419,7 @@
 		196E5AB0186BDC7C006F25DF /* API */ = {
 			isa = PBXGroup;
 			children = (
+				192FD135187E895B005D1A3C /* SNS */,
 				196E5AB7186BE9F0006F25DF /* RELibraryAPI.h */,
 				196E5AB8186BE9F0006F25DF /* RELibraryAPI.m */,
 				196E5AB4186BE6FE006F25DF /* REHTTPClient.h */,
@@ -383,10 +517,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192FD12D187E874C005D1A3C /* item_more_highlighted@2x.png in Resources */,
+				192FD126187E874C005D1A3C /* banner_image_place_holder@2x.png in Resources */,
+				192FD115187E8019005D1A3C /* webview_back_normal@2x.png in Resources */,
 				1985C81F18717A130005BB09 /* CarType.json in Resources */,
+				192FD12B187E874C005D1A3C /* item_back_highlighted@2x.png in Resources */,
 				1942D9501869619F00B87C64 /* InfoPlist.strings in Resources */,
+				192FD127187E874C005D1A3C /* banner_place_holder@2x.png in Resources */,
+				192FD12E187E874C005D1A3C /* item_more_normal@2x.png in Resources */,
+				192FD118187E8019005D1A3C /* webview_refresh_hithlighted@2x.png in Resources */,
+				192FD131187E874C005D1A3C /* orange_button@2x.png in Resources */,
+				192FD114187E8019005D1A3C /* webview_back_hithlighted@2x.png in Resources */,
 				1942D9581869619F00B87C64 /* Images.xcassets in Resources */,
-				196E5AC1186C2156006F25DF /* bar_button_back@2x.png in Resources */,
+				192FD12F187E874C005D1A3C /* more_car@2x.png in Resources */,
+				192FD119187E8019005D1A3C /* webview_refresh_normal@2x.png in Resources */,
+				192FD116187E8019005D1A3C /* webview_forward_highlithed@2x.png in Resources */,
+				192FD130187E874C005D1A3C /* navigation_bar@2x.png in Resources */,
+				192FD12C187E874C005D1A3C /* item_back_normal@2x.png in Resources */,
+				192FD117187E8019005D1A3C /* webview_forward_normal@2x.png in Resources */,
+				192FD128187E874C005D1A3C /* home_page_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,14 +593,27 @@
 				196E5AAF186BD387006F25DF /* REAddCarViewController.m in Sources */,
 				1942D9561869619F00B87C64 /* REAppDelegate.m in Sources */,
 				196E5ABC186BFCB7006F25DF /* RECity.m in Sources */,
+				192FD138187E897B005D1A3C /* CNSShareManager.m in Sources */,
 				196E5AAC186BCDA3006F25DF /* REBanner.m in Sources */,
+				192FD10A187E4EC1005D1A3C /* REDetailViewController.m in Sources */,
+				193CD72E1875680F009FF3E3 /* REDetailListViewController.m in Sources */,
+				193CD725187563D5009FF3E3 /* RERecallInfo.m in Sources */,
 				196E5AA5186BC934006F25DF /* CNSBannerView.m in Sources */,
 				196E5AC5186C37A2006F25DF /* RECityListSectionHeaderView.m in Sources */,
+				1974225918729CF8009B72EF /* REInputCell.m in Sources */,
+				19EC2F161876A727003D1E7F /* RERecallDetailViewController.m in Sources */,
 				196E5AB6186BE6FE006F25DF /* REHTTPClient.m in Sources */,
+				19EC2F191876A75A003D1E7F /* REBreakRulesDetailViewController.m in Sources */,
 				196E5AA6186BC934006F25DF /* CNSPageControl.m in Sources */,
 				196E5AB9186BE9F0006F25DF /* RELibraryAPI.m in Sources */,
+				192FD10D187E7F99005D1A3C /* REWebViewController.m in Sources */,
+				192FD140187E901F005D1A3C /* REHomePageCell.m in Sources */,
 				1985C81D187177B00005BB09 /* RECarType.m in Sources */,
+				193CD72B1875679A009FF3E3 /* APOSwitchPageView.m in Sources */,
 				196E5AA9186BCABC006F25DF /* REHomePageViewController.m in Sources */,
+				192FD107187E3D86005D1A3C /* REBreakRulesInfo.m in Sources */,
+				193CD72218752916009FF3E3 /* RESelectCarTypeViewController.m in Sources */,
+				192FD134187E88F9005D1A3C /* REMoreViewController.m in Sources */,
 				190AE0BE1869781F0071E892 /* RENavigationController.m in Sources */,
 				190AE0BB186977F90071E892 /* REViewController.m in Sources */,
 				1985C81A18715D290005BB09 /* RECar.m in Sources */,
@@ -578,6 +740,10 @@
 				GCC_PREFIX_HEADER = "Rhea/Rhea-Prefix.pch";
 				INFOPLIST_FILE = "Rhea/Rhea-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/tiger/Desktop/Rhea/Rhea/API/WeChatSDK,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -593,6 +759,10 @@
 				GCC_PREFIX_HEADER = "Rhea/Rhea-Prefix.pch";
 				INFOPLIST_FILE = "Rhea/Rhea-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/tiger/Desktop/Rhea/Rhea/API/WeChatSDK,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -14,6 +14,15 @@
 + (void)getCitysWithSuccesseedBlock:(void(^)(NSArray *citys))succeededBlock failedBlock:(REFailedBlock)failedBlock;
 
 + (NSArray *)getAllSavedCar;
-- (BOOL)saveCar:(RECar *)car;
++ (BOOL)saveCar:(RECar *)car;
++ (NSInteger)carCount;
+
++ (void)getCarTypeList:(void(^)(NSArray *))callBack;
+
++ (void)getRecallInfoWithVinCode:(NSString *)vinCode succeededBlock:(void (^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlock;
+
++ (void)getBreakRulesInfoWithCar:(RECar *)car succeededBlock:(void (^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlcok;
+
++ (void)getBannerWithSucceededBlock:(void (^)(NSArray *bannerList))succeededBlock failedBlock:(REFailedBlock)failedBlock;
 
 @end

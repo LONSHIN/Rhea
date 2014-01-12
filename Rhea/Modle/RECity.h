@@ -15,7 +15,11 @@
 @property (nonatomic, copy) NSString *abbreviation;
 @property (nonatomic, assign) BOOL needEngineCode;
 @property (nonatomic, assign) BOOL needRegistCode;
+@property (nonatomic, assign) BOOL needVinCode;
 @property (nonatomic, assign) BOOL status;
+@property (nonatomic, assign) NSInteger engineCodeNumber;
+@property (nonatomic, assign) NSInteger registCodeNumber;
+@property (nonatomic, assign) NSInteger vinCodeNumber;
 
 - (id)initWithInfo:(NSDictionary *)dict;
 + (RECity *)defaultCity;
@@ -23,11 +27,12 @@
 @end
 
 
-@interface RECityManager : NSObject
 
+@interface RECityManager : NSObject
 
 @property (nonatomic, strong) NSArray *citys;
 
 + (RECityManager *)sharedManager;
 
 @end
+
