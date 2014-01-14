@@ -16,6 +16,7 @@
 + (NSArray *)getAllSavedCar;
 + (BOOL)saveCar:(RECar *)car;
 + (NSInteger)carCount;
++ (BOOL)deleteCar:(RECar *)car;
 
 + (void)getCarTypeList:(void(^)(NSArray *))callBack;
 

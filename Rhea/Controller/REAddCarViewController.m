@@ -31,6 +31,7 @@
 {
     [super viewDidLoad];
     
+    self.title = @"添加车辆";
     [self configTableView];
     self.currentEditCar = [[RECar alloc] init];
     [self configRightBarButton];
@@ -49,7 +50,15 @@
 
 - (void)configRightBarButton
 {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(handleAddCarButtonTapped:)];
+    UIButton *button = [UIButton buttonWithText:@"添加"
+                                           font:[UIFont systemFontOfSize:12.0f]
+                                      textColor:[UIColor whiteColor]
+                               highlightedColor:[UIColor lightGrayColor]
+                                         target:self
+                                         action:@selector(handleAddCarButtonTapped:)];
+    button.backgroundColor = [UIColor colorWithHexString:@"5480c6"];
+    button.frame = CGRectMake(0.0f, 0.0f, button.width , 25.0f);
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 
@@ -125,7 +134,7 @@
     }
     
     [RELibraryAPI saveCar:self.currentEditCar];
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationNewCarSaved object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationCarListChanged object:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

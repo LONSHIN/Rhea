@@ -9,7 +9,7 @@
 #import "CNSShareManager.h"
 #import "WXApi.h"
 
-NSString *const kApplicationDownloadUrl = @"https://itunes.apple.com/cn/app/id775506911?ls=1&mt=8";
+NSString *const kApplicationDownloadUrl = @"https://itunes.apple.com/cn/app/id796907297?ls=1&mt=8";
 
 @implementation CNSShareManager
 
@@ -66,9 +66,9 @@ NSString *const kApplicationDownloadUrl = @"https://itunes.apple.com/cn/app/id77
 - (WXMediaMessage *)applicationWeChatMediaMessageInSence:(NSInteger)sence
 {
     WXMediaMessage *message = [WXMediaMessage message];
-    message.title = @"车小弟标致特别版";
+    message.title = @"车小弟－查违章 查召回";
     message.description = @"";
-    [message setThumbImage:[UIImage imageNamed:@"icon_108"]];
+    [message setThumbImage:[UIImage imageNamed:@"58x58ICON"]];
     
     WXAppExtendObject *extendObject = [WXAppExtendObject object];
     extendObject.url = kApplicationDownloadUrl;

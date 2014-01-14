@@ -45,7 +45,7 @@
     [self getCarData];
     [self getBannerData];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCarSavedNotification) name:kNotificationNewCarSaved object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCarSavedNotification) name:kNotificationCarListChanged object:nil];
 }
 
 
@@ -62,6 +62,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.width, [UIScreen mainScreen].bounds.size.height - 64.0f)];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.view addSubview:self.tableView];
 }
@@ -78,7 +79,7 @@
 - (void)configLeftBarButton
 {
     UIButton *moreButton = [UIButton buttonWithImageName:@"item_more_normal"
-                                    highlightedImageName:@"item_more_highlighted"
+                                    highlightedImageName:nil
                                                    title:@""
                                                   target:self
                                                   action:@selector(handleMoreButtonTapped:)];
@@ -88,7 +89,15 @@
 
 - (void)configRightBarButton
 {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"召回查询" style:UIBarButtonItemStylePlain target:self action:@selector(handleRecallButtonTapped:)];
+    UIButton *button = [UIButton buttonWithText:@"召回查询"
+                                           font:[UIFont systemFontOfSize:12.0f]
+                                      textColor:[UIColor whiteColor]
+                               highlightedColor:[UIColor lightGrayColor]
+                                         target:self
+                                         action:@selector(handleRecallButtonTapped:)];
+    button.frame = CGRectMake(0.0f, 0.0, 58.0f, 25.0f);
+    button.backgroundColor = [UIColor colorWithHexString:@"5480c6"];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 
@@ -197,18 +206,31 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     NSInteger row = [indexPath row];
     
     if (row == self.carList.count) {
-        cell.textLabel.text = @"＋添加车辆";
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        UIImageView *addBg = [UIImageView imageViewWithImageName:@"home_page_add_car_button_bg"];
+        addBg.frame = CGRectMake(20.0f, 10.0f, 280.0f, 88.0);
+        [cell.contentView addSubview:addBg];
     }else {
         cell.textLabel.textAlignment = NSTextAlignmentLeft;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         RECar *car = [self.carList objectAtIndex:indexPath.row];
-        cell.textLabel.text = car.licensePlateNumber;
+        
+        UIImageView *bg = [UIImageView imageViewWithImageName:@"home_page_plate_bg"];
+        [cell.contentView addSubview:bg];
+        bg.frame = CGRectMake(20.0f, 10.0f, 280.0f, 88.0);
+        [cell.contentView addSubview:bg];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, bg.width, bg.height)];
+        label.font = [UIFont boldSystemFontOfSize:30.0f];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.backgroundColor = [UIColor clearColor];
+        label.textColor = [UIColor whiteColor];
+        [bg addSubview:label];
+        label.text = car.licensePlateNumber;
     }
     
     return cell;
@@ -217,7 +239,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44.0f;
+    return 103.0f;
 }
 
 

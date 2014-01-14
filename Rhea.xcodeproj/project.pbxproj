@@ -23,8 +23,6 @@
 		192FD128187E874C005D1A3C /* home_page_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD11C187E874C005D1A3C /* home_page_logo@2x.png */; };
 		192FD12B187E874C005D1A3C /* item_back_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD11F187E874C005D1A3C /* item_back_highlighted@2x.png */; };
 		192FD12C187E874C005D1A3C /* item_back_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD120187E874C005D1A3C /* item_back_normal@2x.png */; };
-		192FD12D187E874C005D1A3C /* item_more_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD121187E874C005D1A3C /* item_more_highlighted@2x.png */; };
-		192FD12E187E874C005D1A3C /* item_more_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD122187E874C005D1A3C /* item_more_normal@2x.png */; };
 		192FD12F187E874C005D1A3C /* more_car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD123187E874C005D1A3C /* more_car@2x.png */; };
 		192FD130187E874C005D1A3C /* navigation_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD124187E874C005D1A3C /* navigation_bar@2x.png */; };
 		192FD131187E874C005D1A3C /* orange_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD125187E874C005D1A3C /* orange_button@2x.png */; };
@@ -32,6 +30,9 @@
 		192FD138187E897B005D1A3C /* CNSShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FD137187E897B005D1A3C /* CNSShareManager.m */; };
 		192FD13D187E8981005D1A3C /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 192FD13A187E8981005D1A3C /* libWeChatSDK.a */; };
 		192FD140187E901F005D1A3C /* REHomePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FD13F187E901F005D1A3C /* REHomePageCell.m */; };
+		1932C66E1884D7FB0026B0A5 /* item_more_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1932C66D1884D7FB0026B0A5 /* item_more_normal@2x.png */; };
+		1932C6711884D81E0026B0A5 /* home_page_add_car_button_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1932C66F1884D81E0026B0A5 /* home_page_add_car_button_bg@2x.png */; };
+		1932C6721884D81E0026B0A5 /* home_page_plate_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1932C6701884D81E0026B0A5 /* home_page_plate_bg@2x.png */; };
 		193CD72218752916009FF3E3 /* RESelectCarTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CD72118752916009FF3E3 /* RESelectCarTypeViewController.m */; };
 		193CD725187563D5009FF3E3 /* RERecallInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CD724187563D5009FF3E3 /* RERecallInfo.m */; };
 		193CD72B1875679A009FF3E3 /* APOSwitchPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CD72A1875679A009FF3E3 /* APOSwitchPageView.m */; };
@@ -59,6 +60,10 @@
 		196E5ABF186C1393006F25DF /* RECityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5ABE186C1393006F25DF /* RECityListViewController.m */; };
 		196E5AC5186C37A2006F25DF /* RECityListSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 196E5AC4186C37A2006F25DF /* RECityListSectionHeaderView.m */; };
 		1974225918729CF8009B72EF /* REInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974225818729CF8009B72EF /* REInputCell.m */; };
+		1974D41B188526AB000AFEA1 /* REManageCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974D41A188526AB000AFEA1 /* REManageCarViewController.m */; };
+		1974D41E188528CD000AFEA1 /* RECarDeleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974D41D188528CD000AFEA1 /* RECarDeleteCell.m */; };
+		1974D42218855006000AFEA1 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1974D42018855006000AFEA1 /* libMobClickLibrary.a */; };
+		1974D4241885538E000AFEA1 /* 58x58ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1974D4231885538E000AFEA1 /* 58x58ICON@2x.png */; };
 		1985C81A18715D290005BB09 /* RECar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1985C81918715D290005BB09 /* RECar.m */; };
 		1985C81D187177B00005BB09 /* RECarType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1985C81C187177AF0005BB09 /* RECarType.m */; };
 		1985C81F18717A130005BB09 /* CarType.json in Resources */ = {isa = PBXBuildFile; fileRef = 1985C81E18717A130005BB09 /* CarType.json */; };
@@ -101,8 +106,6 @@
 		192FD11C187E874C005D1A3C /* home_page_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_page_logo@2x.png"; sourceTree = "<group>"; };
 		192FD11F187E874C005D1A3C /* item_back_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_back_highlighted@2x.png"; sourceTree = "<group>"; };
 		192FD120187E874C005D1A3C /* item_back_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_back_normal@2x.png"; sourceTree = "<group>"; };
-		192FD121187E874C005D1A3C /* item_more_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_more_highlighted@2x.png"; sourceTree = "<group>"; };
-		192FD122187E874C005D1A3C /* item_more_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_more_normal@2x.png"; sourceTree = "<group>"; };
 		192FD123187E874C005D1A3C /* more_car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_car@2x.png"; sourceTree = "<group>"; };
 		192FD124187E874C005D1A3C /* navigation_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_bar@2x.png"; sourceTree = "<group>"; };
 		192FD125187E874C005D1A3C /* orange_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange_button@2x.png"; sourceTree = "<group>"; };
@@ -115,6 +118,9 @@
 		192FD13C187E8981005D1A3C /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		192FD13E187E901F005D1A3C /* REHomePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REHomePageCell.h; sourceTree = "<group>"; };
 		192FD13F187E901F005D1A3C /* REHomePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REHomePageCell.m; sourceTree = "<group>"; };
+		1932C66D1884D7FB0026B0A5 /* item_more_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_more_normal@2x.png"; sourceTree = "<group>"; };
+		1932C66F1884D81E0026B0A5 /* home_page_add_car_button_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_page_add_car_button_bg@2x.png"; sourceTree = "<group>"; };
+		1932C6701884D81E0026B0A5 /* home_page_plate_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_page_plate_bg@2x.png"; sourceTree = "<group>"; };
 		193CD72018752916009FF3E3 /* RESelectCarTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESelectCarTypeViewController.h; sourceTree = "<group>"; };
 		193CD72118752916009FF3E3 /* RESelectCarTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESelectCarTypeViewController.m; sourceTree = "<group>"; };
 		193CD723187563D5009FF3E3 /* RERecallInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RERecallInfo.h; sourceTree = "<group>"; };
@@ -161,6 +167,13 @@
 		196E5AC4186C37A2006F25DF /* RECityListSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECityListSectionHeaderView.m; sourceTree = "<group>"; };
 		1974225718729CF8009B72EF /* REInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REInputCell.h; sourceTree = "<group>"; };
 		1974225818729CF8009B72EF /* REInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REInputCell.m; sourceTree = "<group>"; };
+		1974D419188526AB000AFEA1 /* REManageCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REManageCarViewController.h; sourceTree = "<group>"; };
+		1974D41A188526AB000AFEA1 /* REManageCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REManageCarViewController.m; sourceTree = "<group>"; };
+		1974D41C188528CD000AFEA1 /* RECarDeleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECarDeleteCell.h; sourceTree = "<group>"; };
+		1974D41D188528CD000AFEA1 /* RECarDeleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECarDeleteCell.m; sourceTree = "<group>"; };
+		1974D42018855006000AFEA1 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		1974D42118855006000AFEA1 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		1974D4231885538E000AFEA1 /* 58x58ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "58x58ICON@2x.png"; sourceTree = "<group>"; };
 		1985C81818715D290005BB09 /* RECar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECar.h; sourceTree = "<group>"; };
 		1985C81918715D290005BB09 /* RECar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECar.m; sourceTree = "<group>"; };
 		1985C81B187177AF0005BB09 /* RECarType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECarType.h; sourceTree = "<group>"; };
@@ -184,6 +197,7 @@
 				1942D9481869619F00B87C64 /* CoreGraphics.framework in Frameworks */,
 				1942D94A1869619F00B87C64 /* UIKit.framework in Frameworks */,
 				1942D9461869619F00B87C64 /* Foundation.framework in Frameworks */,
+				1974D42218855006000AFEA1 /* libMobClickLibrary.a in Frameworks */,
 				CA728681C25B4FB39445E89A /* libPods.a in Frameworks */,
 				192FD13D187E8981005D1A3C /* libWeChatSDK.a in Frameworks */,
 			);
@@ -215,6 +229,7 @@
 		190AE0B4186976CA0071E892 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1974D41F18854FEB000AFEA1 /* New Group */,
 				1985C81E18717A130005BB09 /* CarType.json */,
 				192FD10E187E8019005D1A3C /* webview_back_hithlighted@2x.png */,
 				192FD10F187E8019005D1A3C /* webview_back_normal@2x.png */,
@@ -227,11 +242,13 @@
 				192FD11C187E874C005D1A3C /* home_page_logo@2x.png */,
 				192FD11F187E874C005D1A3C /* item_back_highlighted@2x.png */,
 				192FD120187E874C005D1A3C /* item_back_normal@2x.png */,
-				192FD121187E874C005D1A3C /* item_more_highlighted@2x.png */,
-				192FD122187E874C005D1A3C /* item_more_normal@2x.png */,
 				192FD123187E874C005D1A3C /* more_car@2x.png */,
 				192FD124187E874C005D1A3C /* navigation_bar@2x.png */,
 				192FD125187E874C005D1A3C /* orange_button@2x.png */,
+				1932C66D1884D7FB0026B0A5 /* item_more_normal@2x.png */,
+				1932C66F1884D81E0026B0A5 /* home_page_add_car_button_bg@2x.png */,
+				1932C6701884D81E0026B0A5 /* home_page_plate_bg@2x.png */,
+				1974D4231885538E000AFEA1 /* 58x58ICON@2x.png */,
 				1942D9571869619F00B87C64 /* Images.xcassets */,
 			);
 			path = Resource;
@@ -244,6 +261,8 @@
 				196E5AA0186BC928006F25DF /* Banner */,
 				1974225718729CF8009B72EF /* REInputCell.h */,
 				1974225818729CF8009B72EF /* REInputCell.m */,
+				1974D41C188528CD000AFEA1 /* RECarDeleteCell.h */,
+				1974D41D188528CD000AFEA1 /* RECarDeleteCell.m */,
 				193CD7291875679A009FF3E3 /* APOSwitchPageView.h */,
 				193CD72A1875679A009FF3E3 /* APOSwitchPageView.m */,
 				192FD13E187E901F005D1A3C /* REHomePageCell.h */,
@@ -293,6 +312,8 @@
 				19EC2F181876A75A003D1E7F /* REBreakRulesDetailViewController.m */,
 				192FD132187E88F9005D1A3C /* REMoreViewController.h */,
 				192FD133187E88F9005D1A3C /* REMoreViewController.m */,
+				1974D419188526AB000AFEA1 /* REManageCarViewController.h */,
+				1974D41A188526AB000AFEA1 /* REManageCarViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -439,6 +460,15 @@
 			name = CityList;
 			sourceTree = "<group>";
 		};
+		1974D41F18854FEB000AFEA1 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				1974D42018855006000AFEA1 /* libMobClickLibrary.a */,
+				1974D42118855006000AFEA1 /* MobClick.h */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -489,6 +519,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Tiger;
 				TargetAttributes = {
+					1942D9411869619F00B87C64 = {
+						DevelopmentTeam = Q6HJ7F883G;
+					};
 					1942D95C1869619F00B87C64 = {
 						TestTargetID = 1942D9411869619F00B87C64;
 					};
@@ -517,15 +550,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				192FD12D187E874C005D1A3C /* item_more_highlighted@2x.png in Resources */,
+				1932C6711884D81E0026B0A5 /* home_page_add_car_button_bg@2x.png in Resources */,
 				192FD126187E874C005D1A3C /* banner_image_place_holder@2x.png in Resources */,
 				192FD115187E8019005D1A3C /* webview_back_normal@2x.png in Resources */,
 				1985C81F18717A130005BB09 /* CarType.json in Resources */,
 				192FD12B187E874C005D1A3C /* item_back_highlighted@2x.png in Resources */,
 				1942D9501869619F00B87C64 /* InfoPlist.strings in Resources */,
 				192FD127187E874C005D1A3C /* banner_place_holder@2x.png in Resources */,
-				192FD12E187E874C005D1A3C /* item_more_normal@2x.png in Resources */,
+				1974D4241885538E000AFEA1 /* 58x58ICON@2x.png in Resources */,
 				192FD118187E8019005D1A3C /* webview_refresh_hithlighted@2x.png in Resources */,
+				1932C66E1884D7FB0026B0A5 /* item_more_normal@2x.png in Resources */,
 				192FD131187E874C005D1A3C /* orange_button@2x.png in Resources */,
 				192FD114187E8019005D1A3C /* webview_back_hithlighted@2x.png in Resources */,
 				1942D9581869619F00B87C64 /* Images.xcassets in Resources */,
@@ -533,6 +567,7 @@
 				192FD119187E8019005D1A3C /* webview_refresh_normal@2x.png in Resources */,
 				192FD116187E8019005D1A3C /* webview_forward_highlithed@2x.png in Resources */,
 				192FD130187E874C005D1A3C /* navigation_bar@2x.png in Resources */,
+				1932C6721884D81E0026B0A5 /* home_page_plate_bg@2x.png in Resources */,
 				192FD12C187E874C005D1A3C /* item_back_normal@2x.png in Resources */,
 				192FD117187E8019005D1A3C /* webview_forward_normal@2x.png in Resources */,
 				192FD128187E874C005D1A3C /* home_page_logo@2x.png in Resources */,
@@ -599,6 +634,7 @@
 				193CD72E1875680F009FF3E3 /* REDetailListViewController.m in Sources */,
 				193CD725187563D5009FF3E3 /* RERecallInfo.m in Sources */,
 				196E5AA5186BC934006F25DF /* CNSBannerView.m in Sources */,
+				1974D41E188528CD000AFEA1 /* RECarDeleteCell.m in Sources */,
 				196E5AC5186C37A2006F25DF /* RECityListSectionHeaderView.m in Sources */,
 				1974225918729CF8009B72EF /* REInputCell.m in Sources */,
 				19EC2F161876A727003D1E7F /* RERecallDetailViewController.m in Sources */,
@@ -608,6 +644,7 @@
 				196E5AB9186BE9F0006F25DF /* RELibraryAPI.m in Sources */,
 				192FD10D187E7F99005D1A3C /* REWebViewController.m in Sources */,
 				192FD140187E901F005D1A3C /* REHomePageCell.m in Sources */,
+				1974D41B188526AB000AFEA1 /* REManageCarViewController.m in Sources */,
 				1985C81D187177B00005BB09 /* RECarType.m in Sources */,
 				193CD72B1875679A009FF3E3 /* APOSwitchPageView.m in Sources */,
 				196E5AA9186BCABC006F25DF /* REHomePageViewController.m in Sources */,
@@ -736,6 +773,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rhea/Rhea-Prefix.pch";
 				INFOPLIST_FILE = "Rhea/Rhea-Info.plist";
@@ -743,8 +781,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/tiger/Desktop/Rhea/Rhea/API/WeChatSDK,
+					/Users/tiger/Desktop/Rhea/Rhea/Resource,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -755,6 +795,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rhea/Rhea-Prefix.pch";
 				INFOPLIST_FILE = "Rhea/Rhea-Info.plist";
@@ -762,8 +803,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/tiger/Desktop/Rhea/Rhea/API/WeChatSDK,
+					/Users/tiger/Desktop/Rhea/Rhea/Resource,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -28,6 +28,51 @@
 }
 
 
+- (NSString *)engineCode
+{
+    if (_engineCode == nil) {
+        _engineCode = @"";
+    }
+    return _engineCode;
+}
+
+
+- (NSString *)vinCode
+{
+    if (_vinCode == nil) {
+        _vinCode = @"";
+    }
+    return _vinCode;
+}
+
+
+- (NSString *)registCode
+{
+    if (_registCode == nil) {
+        _registCode = @"";
+    }
+    return _registCode;
+}
+
+
+- (NSString *)licensePlateNumber
+{
+    if (_licensePlateNumber == nil) {
+        _licensePlateNumber = @"";
+    }
+    return _licensePlateNumber;
+}
+
+
+- (NSString *)intactVinCode
+{
+    if (_intactVinCode == nil) {
+        _intactVinCode = @"";
+    }
+    return _intactVinCode;
+}
+
+
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.engineCode forKey:@"kKeyCodeCarEngineCode"];

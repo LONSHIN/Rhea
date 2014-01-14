@@ -77,7 +77,7 @@
 
 - (void)getBreakRulesDataWithCar:(RECar *)car succeededBlock:(void (^)(NSDictionary *))succeededBlock failedBlock:(REFailedBlock)failedBlock
 {
-//    NSDictionary *parameters = @{@"token": kAPIToken, @"city" : car.city.code, @"hphm" : car.licensePlateNumber, @"engineno" : car.engineCode, @"classno" : car.vinCode, @"registno" : car.registCode};
+   // NSDictionary *parameters = @{@"token": kAPIToken, @"city" : car.city.code, @"hphm" : car.licensePlateNumber, @"engineno" : car.engineCode, @"classno" : car.vinCode, @"registno" : car.registCode, @"hpzl" : car.carType.typeCode};
     
     NSDictionary *parameters = @{@"token": kAPIToken, @"city" : @"ZJ_HZ", @"hphm" : @"浙A29q82", @"engineno" : @"", @"classno" : @"149913", @"registno" : @"", @"hpzl" : @"02"};
     

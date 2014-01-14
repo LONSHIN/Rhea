@@ -66,7 +66,7 @@
         //        self.automaticallyAdjustsScrollViewInsets = NO;
         //        self.extendedLayoutIncludesOpaqueBars = NO;
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        //        self.navigationController.navigationBar.barTintColor = kDefaultMainColor;
+        self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"41484d"];
     }else {
         UIImage *barBackgroundView = [[UIImage imageNamed:@"navigation_bar"] resizableImageWithCapInsets:UIEdgeInsetsMake(0.0f, 1.0f, 0.0f, 1.0f)];
         [self.navigationController.navigationBar setBackgroundImage:barBackgroundView forBarMetrics:UIBarMetricsDefault];
@@ -80,7 +80,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
     label.backgroundColor = [UIColor clearColor];
     label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor colorWithHexString:@"555555"];
+    label.textColor = [UIColor whiteColor];
     self.navigationItem.titleView = label;
     label.text = title;
     [label sizeToFit];

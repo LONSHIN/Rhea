@@ -7,9 +7,10 @@
 //
 
 #import "REDetailListViewController.h"
-#import "REDetailViewController.h"
+//#import "REDetailViewController.h"
 #import "APOSwitchPageView.h"
 #import "RELibraryAPI.h"
+#import "REBreakRulesDetailViewController.h"
 
 
 @interface REDetailListViewController ()
@@ -34,7 +35,7 @@
 
 - (void)configSwitchPageView
 {
-    APOSwitchPageView *switchPageView = [[APOSwitchPageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0, self.view.height - 64.0f)];
+    APOSwitchPageView *switchPageView = [[APOSwitchPageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0, self.view.height)];
     switchPageView.delegate = self;
     switchPageView.dataSource = self;
     switchPageView.pageCount = [RELibraryAPI carCount];
@@ -47,7 +48,7 @@
 - (void)configChildViewController
 {
     for (RECar *car in self.carList) {
-        REDetailViewController *detailVC = [[REDetailViewController alloc] initWithCar:car];
+        REBreakRulesDetailViewController *detailVC = [[REBreakRulesDetailViewController alloc] initWithCar:car];
         [self addChildViewController:detailVC];
     }
 }

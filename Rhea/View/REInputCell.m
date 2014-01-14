@@ -53,7 +53,7 @@
     [self.contentView removeAllSubviews];
     
     if (self.textField == nil) {
-        self.textField = [[UITextField alloc] initWithFrame:CGRectMake(120.0f, 0.0f, 180.0f, self.height)];
+        self.textField = [[UITextField alloc] initWithFrame:CGRectMake(110.0f, 0.0f, 180.0f, self.height)];
     }
     self.textField.text = text;
     self.textField.placeholder = placeholder;

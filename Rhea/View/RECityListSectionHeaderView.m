@@ -23,6 +23,7 @@
     if (self) {
         [self configTextLabel];
         [self configTap];
+        [self configLine];
         self.isOpen = NO;
     }
     return self;
@@ -31,9 +32,17 @@
 
 - (void)configTextLabel
 {
-    self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.width, self.height)];
+    self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, self.width, self.height)];
     self.textLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [self addSubview:self.textLabel];
+}
+
+
+- (void)configLine
+{
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(10.0f, self.height - 0.5f, 310.0f, 0.5f)];
+    line.backgroundColor = [UIColor grayColorWithDeep:192]                ;
+    [self addSubview:line];
 }
 
 

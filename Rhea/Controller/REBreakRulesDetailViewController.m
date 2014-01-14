@@ -9,6 +9,10 @@
 #import "REBreakRulesDetailViewController.h"
 #import "REBreakRulesInfo.h"
 #import "RELibraryAPI.h"
+#import "RERecallDetailViewController.h"
+
+#define kTagOfEmptyView          119
+
 
 @interface REBreakRulesDetailViewController ()
 <UITableViewDataSource, UITableViewDelegate>
@@ -36,6 +40,7 @@
     [super viewDidLoad];
     [self configTableView];
     [self getBreakRulesData];
+    [self configRecallInfo];
 }
 
 
@@ -48,6 +53,11 @@
         [SVProgressHUD dismiss];
         weakSelf.breakRulesList = breakRulesList;
         [weakSelf.tableView reloadData];
+        if (breakRulesList.count == 0) {
+            [weakSelf showEmptyView];
+        }else{
+            [weakSelf removeEmptyView];
+        }
     } failedBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
@@ -56,10 +66,55 @@
 
 - (void)configTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, kScreenIs4InchRetina ? (568.0f - (kSystemVersionPriorToIOS7 ? 44.0f : 64.0f) - 35.0f) : (480.0f - (kSystemVersionPriorToIOS7 ? 44.0f : 64.0f) - 35.0f)) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, kScreenIs4InchRetina ? (568.0f - 64.0f - 35.0f) :(480.0f - 64.0f - 35.0f)) style:UITableViewStyleGrouped];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
+}
+
+
+- (void)configRecallInfo
+{
+    UIButton  *recallButton = [UIButton buttonWithText:@"召回查询"
+                                                  font:[UIFont systemFontOfSize:12.0f]
+                                             textColor:[UIColor whiteColor]
+                                      highlightedColor:[UIColor lightGrayColor]
+                                                target:self
+                                                action:@selector(handleRecallButtonTapped:)];
+    recallButton.frame = CGRectMake(0.0f, self.tableView.height, 320.0f, 35.0f);
+    recallButton.backgroundColor = [UIColor colorWithHexString:@"5480c6"];
+    [self.view addSubview:recallButton];
+}
+
+
+- (void)showEmptyView
+{
+    UILabel *emptyView = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.width, self.tableView.height)];
+    emptyView.backgroundColor = [UIColor colorWithIntegerRed:226 green:233 blue:245];
+    emptyView.textColor = [UIColor colorWithIntegerRed:162 green:174 blue:191];
+    emptyView.font = [UIFont systemFontOfSize:20.0f];
+    emptyView.textAlignment = NSTextAlignmentCenter;
+    emptyView.text = @"恭喜，无违章记录\n\n\n";
+    emptyView.numberOfLines = 0;
+    emptyView.tag = kTagOfEmptyView;
+    [self.view addSubview:emptyView];
+}
+
+
+- (void)removeEmptyView
+{
+    UIView *emptyView = [self.view viewWithTag:kTagOfEmptyView];
+    [emptyView removeFromSuperview];
+}
+
+
+#pragma mark - Button Action
+
+- (void)handleRecallButtonTapped:(UIButton *)sender
+{
+    RERecallDetailViewController *recallDetailVC = [[RERecallDetailViewController alloc] init];
+    RENavigationController *navc = [[RENavigationController alloc] initWithRootViewController:recallDetailVC];
+    [self presentViewController:navc animated:YES completion:nil];
 }
 
 

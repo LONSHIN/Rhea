@@ -27,7 +27,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = [UIColor colorWithHexString:@"e7eef7"];
     }
     return self;
 }
@@ -50,8 +50,8 @@
     for (NSInteger i = 0; i < citys.count; i++) {
         RECity *city = [citys objectAtIndex:i];
         UIButton *cityItem = [UIButton buttonWithText:city.name
-                                                 font:[UIFont systemFontOfSize:12.0f]
-                                            textColor:[UIColor purpleColor]
+                                                 font:[UIFont systemFontOfSize:13.0f]
+                                            textColor:[UIColor colorWithHexString:@"4186f4"]
                                      highlightedColor:[UIColor randomColor]
                                                target:self
                                                action:@selector(handleCityItemTapped:)];

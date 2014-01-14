@@ -32,6 +32,8 @@
     [super viewDidLoad];
     [self configTableView];
     [self configTextField];
+    self.view.backgroundColor = [UIColor whiteColor];//[UIColor colorWithIntegerRed:115 green:158 blue:236];
+    self.title = @"召回查询";
 }
 
 
@@ -59,10 +61,13 @@
 
 - (void)configTextField
 {
-    self.textField = [[UITextField alloc] initWithFrame:CGRectMake(10.0f, 5.0f, 300.0f, 40.0f)];
-    self.textField.backgroundColor = [UIColor redColor];
+    self.textField = [[UITextField alloc] initWithFrame:CGRectMake(10.0f, 0.0f, 300.0f, 40.0f)];
+    //self.textField.backgroundColor = [UIColor redColor];
+    self.textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     self.textField.delegate = self;
-    self.textField.placeholder = @"点此输入完整车辆识别码";
+    [self.textField becomeFirstResponder];
+    self.textField.keyboardType = UIKeyboardTypeASCIICapable;
+    self.textField.placeholder = @"在此输入完整车辆识别码";
     self.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     [self.view addSubview:self.textField];
 }
@@ -70,7 +75,7 @@
 
 - (void)configTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 45.0f, 320.0f, kScreenIs4InchRetina ? (568.0f - (kSystemVersionPriorToIOS7 ? 44.0f : 64.0f) - 35.0f) : (480.0f - (kSystemVersionPriorToIOS7 ? 44.0f : 64.0f) - 35.0f)) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 40.0f, 320.0f, kScreenIs4InchRetina ? (568.0f - (kSystemVersionPriorToIOS7 ? 44.0f : 64.0f) - 35.0f) : (480.0f - (kSystemVersionPriorToIOS7 ? 44.0f : 64.0f) - 35.0f)) style:UITableViewStyleGrouped];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
@@ -79,8 +84,13 @@
 
 - (void)showEmptyView
 {
-    UILabel *emptyView = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.width, self.view.height)];
-    emptyView.text = @"恭喜，无违章记录";
+    UILabel *emptyView = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 40.0f, self.view.width, self.view.height)];
+    emptyView.backgroundColor = [UIColor colorWithIntegerRed:226 green:233 blue:245];
+    emptyView.textColor = [UIColor colorWithIntegerRed:162 green:174 blue:191];
+    emptyView.font = [UIFont systemFontOfSize:20.0f];
+    emptyView.textAlignment = NSTextAlignmentCenter;
+    emptyView.text = @"恭喜，无召回记录\n\n\n";
+    emptyView.numberOfLines = 0;
     emptyView.tag = kTagOfEmptyView;
     [self.view addSubview:emptyView];
 }

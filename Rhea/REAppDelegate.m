@@ -11,6 +11,7 @@
 #import "REDetailListViewController.h"
 #import "REDetailViewController.h"
 #import "WXApi.h"
+#import "MobClick.h"
 
 @interface REAppDelegate ()
 <WXApiDelegate>
@@ -23,8 +24,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [WXApi registerApp:kWechatAppID];
+    [MobClick startWithAppkey:kUmengAPPKEY];
     
     REHomePageViewController *vc = [[REHomePageViewController alloc] init];
    

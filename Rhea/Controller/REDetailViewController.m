@@ -46,9 +46,6 @@
 {
     REBreakRulesDetailViewController *breakRulesVC = [[REBreakRulesDetailViewController alloc] initWithCar:self.car];
     [self addChildViewController:breakRulesVC];
-    
-//    RERecallDetailViewController *recallVC = [[RERecallDetailViewController alloc] initWithCar:self.car];
-//    [self addChildViewController:recallVC];
 }
 
 

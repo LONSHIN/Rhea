@@ -71,16 +71,37 @@
 }
 
 
-+ (BOOL)saveCar:(RECar *)car
++ (BOOL)saveCar:(RECar *)addCar
 {
     NSMutableArray *carList = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:kCarPath]];
     if (carList == nil) {
         carList = [[NSMutableArray alloc] init];
     }
-    [carList addObject:car];
+    
+    for (RECar *car in carList) {
+        if ([car.licensePlateNumber isEqualToString:addCar.licensePlateNumber]) {
+            [carList removeObject:car];
+        }
+    }
+    
+    [carList addObject:addCar];
     return [NSKeyedArchiver archiveRootObject:carList toFile:kCarPath];
 }
 
+
++ (BOOL)deleteCar:(RECar *)deleteCar
+{
+    NSMutableArray *carArray = [[NSMutableArray alloc] initWithArray:[RELibraryAPI getAllSavedCar]];
+    for (RECar *car in carArray) {
+        if ([car.licensePlateNumber isEqualToString:deleteCar.licensePlateNumber]) {
+            [carArray removeObject:car];
+        }
+    }
+    return [NSKeyedArchiver archiveRootObject:carArray toFile:kCarPath];
+}
+
+
+#pragma mark -
 
 + (void)getCarTypeList:(void(^)(NSArray *))callBack
 {
