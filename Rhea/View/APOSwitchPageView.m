@@ -46,7 +46,7 @@
 
 - (void)didMoveToSuperview
 {
-    [self tilePages];
+    //[self tilePages];
 }
 
 
@@ -75,7 +75,7 @@
     NSInteger pageIndexBehindCurrent = currentPageIndex + 1;
     pageIndexBeforeCurrent = MAX(pageIndexBeforeCurrent, 0);
     pageIndexBehindCurrent = MIN(pageIndexBehindCurrent, self.pageCount - 1);
-    for (NSInteger i = pageIndexBeforeCurrent; i <= pageIndexBehindCurrent; i ++) {
+    for (NSInteger i = currentPageIndex; i <= currentPageIndex; i ++) {
         UIView *contentView = [self viewWithTag:kTagContentView + i];
         if (contentView != nil)     continue;
         if (self.dataSource != nil && [self.dataSource respondsToSelector:@selector(pageView:contentViewForPageIndex:)]) {
@@ -133,9 +133,7 @@
 
 - (void)reloadPageView
 {
-    [self.scrollView.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        [obj removeFromSuperview];
-    }];
+    [self.scrollView removeAllSubviews];
     [self tilePages];
 }
 

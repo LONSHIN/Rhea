@@ -28,7 +28,7 @@
                                      highlightedColor:[UIColor lightGrayColor]
                                                target:self
                                                action:@selector(handleDeleteButtonTapped:)];
-    deleteButton.backgroundColor = [UIColor colorWithHexString:@"5480c6"];
+    deleteButton.backgroundColor = kStandardBlueColor;
     deleteButton.frame = CGRectMake(260.0f, 8.0, deleteButton.width, 25.0f);
     [self.contentView addSubview:deleteButton];
     [self.contentView bringSubviewToFront:deleteButton];

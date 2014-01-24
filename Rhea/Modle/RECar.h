@@ -19,5 +19,14 @@
 @property (nonatomic, copy) NSString *registCode;
 @property (nonatomic, copy) NSString *licensePlateNumber;
 @property (nonatomic, copy) NSString *intactVinCode;
+@property (nonatomic, copy) NSString *brand;
+@property (nonatomic, copy) NSString *series;
+@property (nonatomic, assign) NSInteger breakRulesCount;
+@property (nonatomic, assign) NSInteger recallCount;
+@property (nonatomic, copy) NSString *guid;
+
+- (void)updateWithCarInfo:(NSDictionary *)info;
+- (void)clearCarInfo;
+- (void)updateWithCar:(RECar *)car;
 
 @end

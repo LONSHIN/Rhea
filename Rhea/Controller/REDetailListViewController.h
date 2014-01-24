@@ -8,8 +8,11 @@
 
 #import "REViewController.h"
 #import "RECar.h"
+#import "REDetailViewController.h"
 
 @interface REDetailListViewController : REViewController
+
+- (id)initWithShowType:(REDetailType)type;
 
 @property (nonatomic, strong) RECar *currentShowCar;
 

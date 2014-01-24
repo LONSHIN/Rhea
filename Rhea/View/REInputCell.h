@@ -13,7 +13,13 @@
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) REBasicBlock returnKeyTappedBlcok;
 @property (nonatomic, strong) REBasicBlock deselectedBlock;
+@property (nonatomic, strong) REBasicBlock abbreviationViewTappedBlcok;
+@property (nonatomic, strong) REBasicBlock questionMarkTappedBlock;
 
-- (void)updateTextFieldWithText:(NSString *)text placeholder:(NSString *)placeholder;
+- (void)updateWithTitle:(NSString *)title textFieldText:(NSString *)text placeholder:(NSString *)placeholder;
+
+- (void)updateWithTitle:(NSString *)title detail:(NSString *)detail upRounded:(BOOL)needShowUpRounded downRounded:(BOOL)needShowDownRounded;
+
+- (void)updateWithTitle:(NSString *)title abbreviation:(NSString *)abbreviation textFieldText:(NSString *)text placeholder:(NSString *)placeholder;
 
 @end

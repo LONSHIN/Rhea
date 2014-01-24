@@ -49,6 +49,20 @@
 }
 
 
++ (REHTTPClient *)standardCityListClient
+{
+    static REHTTPClient *_client;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _client = [[REHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:kBasicCityListHostURLString]];
+    });
+    
+    return _client;
+    
+}
+
+
 - (id)initWithBaseURL:(NSURL *)url
 {
     self = [super initWithBaseURL:url];
@@ -63,30 +77,42 @@
 
 #pragma mark - 
 
-- (void)getCityDataWithSuccessedBlock:(void (^)(NSDictionary *))successedBlock failedBlock:(REFailedBlock)failedBlock
++ (void)getCityDataWithSuccessedBlock:(void (^)(NSArray *))successedBlock failedBlock:(REFailedBlock)failedBlock
 {
-    [self postPath:@"query/citys"
+    REHTTPClient *client = [REHTTPClient standardCityListClient];
+    [client setDefaultHeader:@"Accept" value:@"text/html"];
+    [client getPath:@"getcitys"
         parameters:nil
            success:^(AFHTTPRequestOperation *operation, id responseObject) {
-               successedBlock(responseObject);
+               NSArray *response = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                        options: NSJSONReadingMutableContainers
+                                                                          error: nil];
+               successedBlock(response);
            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                failedBlock(error);
            }];
 }
 
 
-- (void)getBreakRulesDataWithCar:(RECar *)car succeededBlock:(void (^)(NSDictionary *))succeededBlock failedBlock:(REFailedBlock)failedBlock
++ (void)getBreakRulesDataWithCar:(RECar *)car succeededBlock:(void (^)(NSDictionary *))succeededBlock failedBlock:(REFailedBlock)failedBlock
 {
-   // NSDictionary *parameters = @{@"token": kAPIToken, @"city" : car.city.code, @"hphm" : car.licensePlateNumber, @"engineno" : car.engineCode, @"classno" : car.vinCode, @"registno" : car.registCode, @"hpzl" : car.carType.typeCode};
+    REHTTPClient *client = [REHTTPClient standardClient];
+    [client setDefaultHeader:@"Accept" value:@"text/html"];
+    NSDictionary *parameters = @{@"token": kAPIToken, @"city" : car.city.code, @"hphm" : car.licensePlateNumber, @"engineno" : car.engineCode, @"classno" : car.vinCode, @"registno" : car.registCode, @"hpzl" : car.carType.typeCode};
     
-    NSDictionary *parameters = @{@"token": kAPIToken, @"city" : @"ZJ_HZ", @"hphm" : @"浙A29q82", @"engineno" : @"", @"classno" : @"149913", @"registno" : @"", @"hpzl" : @"02"};
+ //   NSDictionary *parameters = @{@"token": kAPIToken, @"city" : @"ZJ_HZ", @"hphm" : @"浙A29q82", @"engineno" : @"", @"classno" : @"149913", @"registno" : @"", @"hpzl" : @"02"};
     
-    [self postPath:@"query/json"
+    [client postPath:@""
         parameters:parameters
            success:^(AFHTTPRequestOperation *operation, id responseObject) {
-               NSInteger status = [[responseObject objectForKey:@"errorCode"] integerValue];
+               NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                         options: NSJSONReadingMutableContainers
+                                                                           error: nil];
+               NSDictionary *breakRulesInfo = [response objectForKey:@"Traffic"];
+               
+               NSInteger status = [[breakRulesInfo objectForKey:@"errorCode"] integerValue];
                if (status == 0) {
-                   succeededBlock([responseObject objectForKey:@"lists"]);
+                   succeededBlock([breakRulesInfo objectForKey:@"lists"]);
                }else {
                    NSString *message;
                    if (status == 1) {
@@ -115,11 +141,12 @@
 }
 
 
-- (void)getRecallDataWithVinCode:(NSString *)vinCode succeededBlcok:(void(^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlock
++ (void)getRecallDataWithVinCode:(NSString *)vinCode succeededBlcok:(void(^)(NSArray *recallInfo, NSDictionary *carInfo))succeededBlock failedBlock:(REFailedBlock)failedBlock
 {
-    [self setDefaultHeader:@"Accept" value:@"text/html"];
+    REHTTPClient *client = [REHTTPClient standerdRecallClient];
+    [client setDefaultHeader:@"Accept" value:@"text/html"];
     NSDictionary *parameters = @{@"vin": vinCode};
-    [self postPath:@""
+    [client postPath:@""
         parameters:parameters
            success:^(AFHTTPRequestOperation *operation, id responseObject) {
                NSDictionary *response  = [NSJSONSerialization JSONObjectWithData:responseObject
@@ -129,11 +156,10 @@
                NSInteger errorCode = [[response objectForKey:@"errorCode"] integerValue];
                
                if (errorCode == 1) {
-                   NSLog(@"error:vin码格式错误");
                    NSError *error = [NSError errorWithDomain:@"com.chexiaodi.rhea" code:999 userInfo:@{NSLocalizedDescriptionKey : @"vin码格式错误"}];
                    failedBlock(error);
                }else {
-                   succeededBlock([response objectForKey:@"recallInfo"]);
+                   succeededBlock([response objectForKey:@"recallInfo"], [response objectForKey:@"car"]);
                }
 
            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -143,11 +169,12 @@
 }
 
 
-- (void)getBannerDataWithSucceededBlock:(void (^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlock
++ (void)getBannerDataWithSucceededBlock:(void (^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlock
 {
-    [self setDefaultHeader:@"Accept" value:@"text/html"];
+    REHTTPClient *client = [REHTTPClient standardBannerClient];
+    [client setDefaultHeader:@"Accept" value:@"text/html"];
     NSDictionary *parameters = @{@"UserAgent": @"IOS/0.9.1"};
-    [self postPath:@"promotionlist" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [client postPath:@"promotionlist" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *response  = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                   options: NSJSONReadingMutableContainers
                                                                     error: nil];

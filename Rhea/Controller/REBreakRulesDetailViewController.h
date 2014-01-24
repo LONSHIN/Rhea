@@ -13,4 +13,6 @@
 
 - (id)initWithCar:(RECar *)car;
 
+- (void)updateWithCar:(RECar *)car;
+
 @end

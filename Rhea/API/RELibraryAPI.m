@@ -22,18 +22,18 @@
     if (cityManager.citys != nil) {
         succeededBlock(cityManager.citys);
     }else {
-        [[REHTTPClient standardClient] getCityDataWithSuccessedBlock:^(NSDictionary *citysDictionary) {
-            NSArray *allKeys = [citysDictionary allKeys];
+        [REHTTPClient getCityDataWithSuccessedBlock:^(NSArray *cityDataArray) {
             NSMutableArray *citys = [[NSMutableArray alloc] init];
-            for (NSString *key in allKeys) {
-                NSDictionary *provinceInfo = [citysDictionary objectForKey:key];
-                
+            for (NSDictionary *provinceInfo in cityDataArray) {
                 NSMutableDictionary *province = [[NSMutableDictionary alloc] init];
                 [province setObject:provinceInfo[kKeyCitysProvince] forKey:kKeyCitysProvince];
                 
                 NSMutableArray *provinceCityArray = [[NSMutableArray alloc] init];
                 for (NSDictionary *cityInfo in [provinceInfo objectForKey:kKeyCitysProvinceCity]) {
                     RECity *city = [[RECity alloc] initWithInfo:cityInfo];
+                    if (city.status == NO) {
+                        continue;
+                    }
                     [provinceCityArray addObject:city];
                 }
                 [province setObject:provinceCityArray forKey:kKeyCitysProvinceCity];
@@ -53,14 +53,6 @@
 
 + (NSArray *)getAllSavedCar
 {
-//    NSMutableArray *test = [[NSMutableArray alloc] init];
-//    for (NSInteger i = 0; i < 3; i++) {
-//        RECar *car = [[RECar alloc] init];
-//        car.licensePlateNumber = [NSString stringWithFormat:@"%@%d",@"TigerTest", i];
-//        [test addObject:car];
-//    }
-//    
-//    return test;
     return [NSKeyedUnarchiver unarchiveObjectWithFile:kCarPath];
 }
 
@@ -73,31 +65,43 @@
 
 + (BOOL)saveCar:(RECar *)addCar
 {
-    NSMutableArray *carList = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:kCarPath]];
-    if (carList == nil) {
-        carList = [[NSMutableArray alloc] init];
+    NSArray *carArray = [NSKeyedUnarchiver unarchiveObjectWithFile:kCarPath];
+    NSMutableArray *carList = [[NSMutableArray alloc] init];
+    for (RECar *car in carArray) {
+        [carList addObject:car];
     }
+    [carList addObject:addCar];
+    return [NSKeyedArchiver archiveRootObject:carList toFile:kCarPath];
+}
+
+
+
++ (BOOL)updateCar:(RECar *)updateCar
+{
+    NSArray *carArray = [NSKeyedUnarchiver unarchiveObjectWithFile:kCarPath];
+    NSMutableArray *carList = [[NSMutableArray alloc] init];
     
-    for (RECar *car in carList) {
-        if ([car.licensePlateNumber isEqualToString:addCar.licensePlateNumber]) {
-            [carList removeObject:car];
+    for (RECar *car in carArray) {
+        if (![car.guid isEqualToString:updateCar.guid]) {
+            [carList addObject:car];
         }
     }
     
-    [carList addObject:addCar];
+    [carList addObject:updateCar];
     return [NSKeyedArchiver archiveRootObject:carList toFile:kCarPath];
 }
 
 
 + (BOOL)deleteCar:(RECar *)deleteCar
 {
-    NSMutableArray *carArray = [[NSMutableArray alloc] initWithArray:[RELibraryAPI getAllSavedCar]];
+    NSArray *carArray = [RELibraryAPI getAllSavedCar];
+    NSMutableArray *currentCarArray = [[NSMutableArray alloc] init];
     for (RECar *car in carArray) {
-        if ([car.licensePlateNumber isEqualToString:deleteCar.licensePlateNumber]) {
-            [carArray removeObject:car];
+        if (![car.guid isEqualToString:deleteCar.guid]) {
+            [currentCarArray addObject:car];
         }
     }
-    return [NSKeyedArchiver archiveRootObject:carArray toFile:kCarPath];
+    return [NSKeyedArchiver archiveRootObject:currentCarArray toFile:kCarPath];
 }
 
 
@@ -120,17 +124,33 @@
 }
 
 
-#pragma mark - 
-
-+ (void)getRecallInfoWithVinCode:(NSString *)vinCode succeededBlock:(void (^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlock
++ (void)getAbbreviationList:(void(^)(NSArray *abbreviationList))callBack
 {
-    [[REHTTPClient standerdRecallClient] getRecallDataWithVinCode:vinCode succeededBlcok:^(NSArray *responseObject) {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Abbreviation" ofType:@"json"];
+    NSString *responseObject = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSArray *response = [NSJSONSerialization JSONObjectWithData:[responseObject dataUsingEncoding:NSUTF8StringEncoding]
+                                                        options: NSJSONReadingMutableContainers
+                                                          error: nil];
+    NSMutableArray *abbreviationList = [[NSMutableArray alloc] init];
+    for (NSString *info in response) {
+        [abbreviationList addObject:info];
+    }
+    
+    callBack(abbreviationList);
+}
+
+
+#pragma mark -
+
++ (void)getRecallInfoWithVinCode:(NSString *)vinCode succeededBlock:(void (^)(NSArray *recallArray, NSDictionary *carInfo))succeededBlock failedBlock:(REFailedBlock)failedBlock
+{
+    [REHTTPClient getRecallDataWithVinCode:vinCode succeededBlcok:^(NSArray *responseObject, NSDictionary *carInfo) {
          NSMutableArray *recallInfoArray = [[NSMutableArray alloc] init];
         for (NSDictionary *info in responseObject) {
             RERecallInfo *recallInfo = [[RERecallInfo alloc] initWithInfo:info];
             [recallInfoArray addObject:recallInfo];
         }
-        succeededBlock(recallInfoArray);
+        succeededBlock(recallInfoArray, carInfo);
     } failedBlock:^(NSError *error) {
         failedBlock(error);
     }];
@@ -141,7 +161,7 @@
 
 + (void)getBreakRulesInfoWithCar:(RECar *)car succeededBlock:(void (^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlcok
 {
-    [[REHTTPClient standardClient] getBreakRulesDataWithCar:car succeededBlock:^(NSDictionary *responseObject) {
+    [REHTTPClient getBreakRulesDataWithCar:car succeededBlock:^(NSDictionary *responseObject) {
         
         NSMutableArray *breakRulesInfoArray = [[NSMutableArray alloc] init];
         for (NSDictionary *info in responseObject) {
@@ -159,7 +179,7 @@
 
 + (void)getBannerWithSucceededBlock:(void (^)(NSArray *bannerList))succeededBlock failedBlock:(REFailedBlock)failedBlock
 {
-    [[REHTTPClient standardBannerClient] getBannerDataWithSucceededBlock:^(NSArray *responseObject) {
+    [REHTTPClient getBannerDataWithSucceededBlock:^(NSArray *responseObject) {
         NSMutableArray *bannerArray = [[NSMutableArray alloc] init];
         for (NSDictionary *info in responseObject) {
             REBanner *banner = [[REBanner alloc] initWithInfo:info];

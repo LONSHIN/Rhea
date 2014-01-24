@@ -15,14 +15,17 @@
 
 + (NSArray *)getAllSavedCar;
 + (BOOL)saveCar:(RECar *)car;
++ (BOOL)updateCar:(RECar *)updateCar;
 + (NSInteger)carCount;
 + (BOOL)deleteCar:(RECar *)car;
 
 + (void)getCarTypeList:(void(^)(NSArray *))callBack;
 
-+ (void)getRecallInfoWithVinCode:(NSString *)vinCode succeededBlock:(void (^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlock;
++ (void)getRecallInfoWithVinCode:(NSString *)vinCode succeededBlock:(void (^)(NSArray *recallArray, NSDictionary *carInfo))succeededBlock failedBlock:(REFailedBlock)failedBlock;
 
 + (void)getBreakRulesInfoWithCar:(RECar *)car succeededBlock:(void (^)(NSArray *))succeededBlock failedBlock:(REFailedBlock)failedBlcok;
+
++ (void)getAbbreviationList:(void(^)(NSArray *abbreviationList))callBack;
 
 + (void)getBannerWithSucceededBlock:(void (^)(NSArray *bannerList))succeededBlock failedBlock:(REFailedBlock)failedBlock;
 

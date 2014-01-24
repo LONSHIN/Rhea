@@ -42,7 +42,7 @@ typedef void(^RESelectBlock)(id block);
 
 - (void)configTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, self.view.height)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, self.view.height - (kSystemVersionPriorToIOS7?44.0f:64.0f))];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
@@ -83,8 +83,15 @@ typedef void(^RESelectBlock)(id block);
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     RECarType *carType = [self.carTypeList objectAtIndex:indexPath.row];
+    cell.textLabel.font = [UIFont systemFontOfSize:14.0f];
     cell.textLabel.text = carType.name;
     return cell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 40.0f;
 }
 
 

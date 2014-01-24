@@ -7,7 +7,10 @@
 //
 
 #import "REViewController.h"
+#import "RECar.h"
 
 @interface REAddCarViewController : REViewController
+
+- (id)initWithCar:(RECar *)car succeededBlock:(REAddCarSucceededBlcok)succeededBlock;
 
 @end

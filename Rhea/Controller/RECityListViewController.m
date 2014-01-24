@@ -67,7 +67,7 @@
 
 - (void)configTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, kSystemVersionPriorToIOS7 ? self.view.height - 64.0f : self.view.height - 44.0f)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, kSystemVersionPriorToIOS7 ? self.view.height - 44.0f : self.view.height - 64.0f)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -136,7 +136,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 50.0f;
+    return 40.0f;
 }
 
 

@@ -27,6 +27,22 @@
     return self;
 }
 
+
+- (void)updateWithCity:(RECity *)city
+{
+    self.name = city.name;
+    self.code = city.code;
+    self.abbreviation = city.abbreviation;
+    self.needEngineCode = city.needEngineCode;
+    self.needRegistCode = city.needRegistCode;
+    self.needVinCode = city.needVinCode;
+    self.status = city.status;
+    self.engineCodeNumber = city.engineCodeNumber;
+    self.registCodeNumber = city.registCodeNumber;
+    self.vinCodeNumber = city.vinCodeNumber;
+}
+
+
 + (RECity *)defaultCity
 {
     RECity *city = [[RECity alloc] init];
@@ -48,6 +64,7 @@
     [aCoder encodeObject:self.code forKey:@"kKeyCodeCityCode"];
     [aCoder encodeBool:self.needEngineCode forKey:@"kKeyCodeCityNeedEngineCode"];
     [aCoder encodeBool:self.needRegistCode forKey:@"kKeyCodeCityNeedRegistCode"];
+    [aCoder encodeBool:self.needVinCode forKey:@"kKeyCodeCityNeedVinCode"];
     [aCoder encodeObject:self.abbreviation forKey:@"kKeyCodeCityAbbreviation"];
     [aCoder encodeInteger:self.engineCodeNumber forKey:@"kKeyCodeCityEngineCodeNumber"];
     [aCoder encodeInteger:self.registCodeNumber forKey:@"kKeyCodeCityRegistCodeNumber"];
@@ -62,6 +79,7 @@
         self.code = [aDecoder decodeObjectForKey:@"kKeyCodeCityCode"];
         self.needRegistCode = [aDecoder decodeBoolForKey:@"kKeyCodeCityNeedRegistCode"];
         self.needRegistCode = [aDecoder decodeBoolForKey:@"kKeyCodeCityNeedRegistCode"];
+        self.needVinCode = [aDecoder decodeBoolForKey:@"kKeyCodeCityNeedVinCode"];
         self.abbreviation = [aDecoder decodeObjectForKey:@"kKeyCodeCityAbbreviation"];
         self.engineCodeNumber = [aDecoder decodeIntegerForKey:@"kKeyCodeCityEngineCodeNumber"];
         self.registCodeNumber = [aDecoder decodeIntegerForKey:@"kKeyCodeCityRegistCodeNumber"];

@@ -14,9 +14,9 @@
 #define kDefersCurrentPageDisplayDefaultValue        NO
 
 #define kCoreNormalColorDefaultColor                 [UIColor colorWithRed:114.0f/255.0f green:114.0f/255.0f blue:114.0f/255.0f alpha:1.0f]
-#define kCoreSelectedColorDefaultColor               [UIColor colorWithRed:252.0f/255.0f  green:79.0f/255.0f blue:7.0f/255.0f alpha:1.0f]
+#define kCoreSelectedColorDefaultColor               kStandardBlueColor
 #define kStrokeNormalColorDefaultColor               [UIColor colorWithRed:252.0f/255.0f green:79.0f/255.0f blue:7.0f/255.0f alpha:0.4f]
-#define kStrokeSelectedColorDefaultColor             [UIColor colorWithRed:252.0f/255.0f green:79.0f/255.0f blue:7.0f/255.0f alpha:1.0f]
+#define kStrokeSelectedColorDefaultColor             kStandardBlueColor
 
 #define kStrokeWidthDefaultValue                     1
 #define kGapWidthDefaultValue                        5

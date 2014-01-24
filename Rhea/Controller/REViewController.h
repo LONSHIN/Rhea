@@ -21,5 +21,6 @@ typedef NS_ENUM(NSInteger, APOViewControllerShowType) {
 @property (nonatomic, assign) APOViewControllerShowType showType;
 
 - (void)goBack;
+- (void)configBackground;
 
 @end

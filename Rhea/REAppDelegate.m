@@ -8,10 +8,9 @@
 
 #import "REAppDelegate.h"
 #import "REHomePageViewController.h"
-#import "REDetailListViewController.h"
-#import "REDetailViewController.h"
 #import "WXApi.h"
 #import "MobClick.h"
+#import "REAddCarViewController.h"
 
 @interface REAppDelegate ()
 <WXApiDelegate>
@@ -30,14 +29,13 @@
     
     REHomePageViewController *vc = [[REHomePageViewController alloc] init];
    
-//    REDetailListViewController *vc = [[REDetailListViewController alloc] init];
-//    REDetailViewController *vc = [[REDetailViewController alloc] initWithCar:nil];
     RENavigationController *navc = [[RENavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navc;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
+
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {

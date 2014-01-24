@@ -27,7 +27,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor colorWithHexString:@"e7eef7"];
+        self.textLabel.backgroundColor = [UIColor clearColor];
+        self.contentView.backgroundColor = [UIColor colorWithHexString:@"edf9fe"];
+        self.backgroundColor = [UIColor colorWithHexString:@"edf9fe"];
     }
     return self;
 }
@@ -46,26 +48,26 @@
     self.section = section;
 
     CGFloat x = 10.0f;
-    CGFloat y = 10.0f;
+    CGFloat y = 0.0f;
     for (NSInteger i = 0; i < citys.count; i++) {
         RECity *city = [citys objectAtIndex:i];
         UIButton *cityItem = [UIButton buttonWithText:city.name
                                                  font:[UIFont systemFontOfSize:13.0f]
-                                            textColor:[UIColor colorWithHexString:@"4186f4"]
-                                     highlightedColor:[UIColor randomColor]
+                                            textColor:kStandardBlueColor
+                                     highlightedColor:[UIColor grayColor]
                                                target:self
                                                action:@selector(handleCityItemTapped:)];
         cityItem.tag = kTagOfButtonBasic + i;
         
         if (x + cityItem.width > 320.0f) {
             x = 10.0;
-            y += 40.0f;
+            y += 27.0f;
         }
         
         cityItem.frame = CGRectMake(x, y, cityItem.width, cityItem.height);
         [self.contentView addSubview:cityItem];
         
-        x += cityItem.width + 10.0f;
+        x += cityItem.width + 30.0f;
     }
 }
 
@@ -80,16 +82,16 @@
 
 + (CGFloat)heightForCitys:(NSArray *)citys
 {
-    CGFloat height = 60.0f;
+    CGFloat height = 40.0f;
     CGFloat singleLineWidth = 20.0f;
     for (NSInteger i = 0; i < citys.count; i++) {
         RECity *city = citys[i];
         CGSize size = [city.name sizeWithFont:[UIFont systemFontOfSize:14.0f]];
         
-        singleLineWidth += size.width + 10;
+        singleLineWidth += size.width + 30;
         if (singleLineWidth > 320.0f) {
             singleLineWidth = 20.0f;
-            height += 40.0f;
+            height += 27.0f;
             i--;
         }
     }

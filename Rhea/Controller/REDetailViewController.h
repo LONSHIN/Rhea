@@ -9,8 +9,32 @@
 #import "REViewController.h"
 #import "RECar.h"
 
+typedef NS_ENUM(NSInteger, REDetailType) {
+    REDetailTypeBreakRules,
+    REDetailTypeRecall,
+};
+
+@protocol REDetailViewControllerDelegate;
+
+
+
 @interface REDetailViewController : REViewController
 
-- (id)initWithCar:(RECar *)car;
+@property (nonatomic, strong) RECar *car;
+@property (nonatomic, weak) id <REDetailViewControllerDelegate> delegate;
+@property (nonatomic, assign) REDetailType currentShowType;
+
+- (id)initWithCar:(RECar *)car showType:(REDetailType)type;
+- (void)switchToViewWithShowType:(REDetailType)type;
+
+- (void)reloadBreakRulesDataWithCar:(RECar *)car;
+- (void)reloadRecallDataWithCar:(RECar *)car;
+
+@end
+
+
+@protocol REDetailViewControllerDelegate <NSObject>
+
+- (void)detailViewController:(REDetailViewController *)detailViewController needChangeToShowType:(REDetailType)type;
 
 @end

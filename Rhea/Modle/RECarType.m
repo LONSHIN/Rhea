@@ -30,6 +30,13 @@
 }
 
 
+- (void)updateWithCarType:(RECarType *)carType
+{
+    self.name = carType.name;
+    self.typeCode = carType.typeCode;
+}
+
+
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.name forKey:@"kKeyCodeCarTypeName"];

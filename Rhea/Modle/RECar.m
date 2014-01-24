@@ -10,7 +10,40 @@
 
 @implementation RECar
 
-- (RECity *)city
+
+- (void)updateWithCarInfo:(NSDictionary *)info
+{
+    self.brand = [info objectForKey:@"firm"];
+    self.series = [info objectForKey:@"model"];
+}
+
+
+- (void)clearCarInfo
+{
+    self.recallCount = 0;
+    self.brand = @"";
+    self.series = @"";
+}
+
+
+- (void)updateWithCar:(RECar *)car
+{
+    [self.city updateWithCity:car.city];
+    [self.carType updateWithCarType:car.carType];
+    self.engineCode = car.engineCode;
+    self.vinCode = car.vinCode;
+    self.registCode = car.registCode;
+    self.licensePlateNumber = car.licensePlateNumber;
+    self.intactVinCode = car.intactVinCode;
+    self.brand = car.brand;
+    self.series = car.series;
+    self.breakRulesCount = car.breakRulesCount;
+    self.recallCount = car.recallCount;
+    self.guid = car.guid;
+}
+
+
+- (RECity *)city 
 {
     if (_city == nil) {
         _city = [RECity defaultCity];
@@ -73,6 +106,42 @@
 }
 
 
+- (NSString *)series
+{
+    if (_series == nil) {
+        _series = @"";
+    }
+    return _series;
+}
+
+
+- (NSString *)brand
+{
+    if (_brand == nil) {
+        _brand = @"";
+    }
+    return _brand;
+}
+
+
+- (NSString *)guid
+{
+    if (_guid == nil || [_guid isEqualToString:@""]) {
+        _guid = [NSString GUID];
+    }
+    return _guid;
+}
+
+
+- (id)init
+{
+    if (self = [super init]) {
+        self.guid = [NSString GUID];
+    }
+    return self;
+}
+
+
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.engineCode forKey:@"kKeyCodeCarEngineCode"];
@@ -82,6 +151,11 @@
     [aCoder encodeObject:self.carType forKey:@"kKeyCodeCarType"];
     [aCoder encodeObject:self.city forKey:@"kKeyCodeCarCity"];
     [aCoder encodeObject:self.intactVinCode forKey:@"kKeyCodeIntactVinCode"];
+    [aCoder encodeObject:self.brand forKey:@"kKeyCodeBrand"];
+    [aCoder encodeObject:self.series forKey:@"kKeyCodeSeries"];
+    [aCoder encodeInteger:self.breakRulesCount forKey:@"kKeyBreakRulesCount"];
+    [aCoder encodeInteger:self.recallCount forKey:@"kKeyRecallCount"];
+    [aCoder encodeObject:self.guid forKey:@"kKeyCountCarUdid"];
 }
 
 
@@ -95,6 +169,11 @@
         self.carType = [aDecoder decodeObjectForKey:@"kKeyCodeCarType"];
         self.city = [aDecoder decodeObjectForKey:@"kKeyCodeCarCity"];
         self.intactVinCode = [aDecoder decodeObjectForKey:@"kKeyCodeIntactVinCode"];
+        self.series = [aDecoder decodeObjectForKey:@"kKeyCodeSeries"];
+        self.brand = [aDecoder decodeObjectForKey:@"kKeyCodeBrand"];
+        self.breakRulesCount = [aDecoder decodeIntegerForKey:@"kKeyBreakRulesCount"];
+        self.recallCount = [aDecoder decodeIntegerForKey:@"kKeyRecallCount"];
+        self.guid = [aDecoder decodeObjectForKey:@"kKeyCountCarUdid"];
     }
     return self;
 }

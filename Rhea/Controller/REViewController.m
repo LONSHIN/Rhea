@@ -48,7 +48,7 @@
     [RACObserve(self, showType) subscribeNext:^(NSString *newName) {
         if (weakSelf.showType != REViewControllerShowTypeUnkonwn) {
             UIButton *backButton = [UIButton buttonWithImageName:@"item_back_normal"
-                                            highlightedImageName:@"item_back_highlighted"
+                                            highlightedImageName:nil
                                                            title:@""
                                                           target:weakSelf
                                                           action:@selector(goBack)];
@@ -66,11 +66,22 @@
         //        self.automaticallyAdjustsScrollViewInsets = NO;
         //        self.extendedLayoutIncludesOpaqueBars = NO;
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"41484d"];
+        self.navigationController.navigationBar.barTintColor = kStandardBlueColor;
     }else {
         UIImage *barBackgroundView = [[UIImage imageNamed:@"navigation_bar"] resizableImageWithCapInsets:UIEdgeInsetsMake(0.0f, 1.0f, 0.0f, 1.0f)];
         [self.navigationController.navigationBar setBackgroundImage:barBackgroundView forBarMetrics:UIBarMetricsDefault];
     }
+}
+
+
+- (void)configBackground
+{
+    UIImage *bgSource = [UIImage imageNamed:@"bg.jpg"];
+    UIImage *bg = [bgSource imageInRect:CGRectMake(0.0f, bgSource.size.height - self.view.height * 2, self.view.width * 2, self.view.height * 2)];
+    UIImageView *bgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.width, self.view.height)];
+    bgView.image = bg;
+    
+    [self.view addSubview:bgView];
 }
 
 

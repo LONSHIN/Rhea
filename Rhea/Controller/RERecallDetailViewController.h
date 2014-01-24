@@ -11,5 +11,9 @@
 
 @interface RERecallDetailViewController : REViewController
 
+- (id)initWithCar:(RECar *)car;
+
+- (void)updateWithCar:(RECar *)car;
 
 @end
+

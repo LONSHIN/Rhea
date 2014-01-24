@@ -75,7 +75,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.carList.count + 1;
+    return self.carList.count;
 }
 
 
@@ -86,7 +86,7 @@
     RECarDeleteCell *cell = (RECarDeleteCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[RECarDeleteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[RECarDeleteCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
@@ -99,6 +99,7 @@
         cell.textLabel.textAlignment = NSTextAlignmentLeft;
         RECar *car = [self.carList objectAtIndex:indexPath.row];
         cell.textLabel.text = car.licensePlateNumber;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"VIN:%@", car.intactVinCode];
         [cell updateWithDeleteButton];
         
         __weak REManageCarViewController *weakSelf = self;
@@ -138,8 +139,8 @@
 {
     if (buttonIndex == 1) {
         [RELibraryAPI deleteCar:self.needDeleteCar];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationCarListChanged object:nil userInfo:@{kKeyNotificationNeedShowDetail: @(NO)}];
         [self.tableView reloadData];
-        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationCarListChanged object:nil];
     }
 }
 

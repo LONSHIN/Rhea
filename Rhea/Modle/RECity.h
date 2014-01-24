@@ -22,6 +22,7 @@
 @property (nonatomic, assign) NSInteger vinCodeNumber;
 
 - (id)initWithInfo:(NSDictionary *)dict;
+- (void)updateWithCity:(RECity *)city;
 + (RECity *)defaultCity;
 
 @end

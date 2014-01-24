@@ -15,5 +15,6 @@
 
 - (id)initWithInfo:(NSDictionary *)info;
 + (RECarType *)defaultCarType;
+- (void)updateWithCarType:(RECarType *)carType;
 
 @end
