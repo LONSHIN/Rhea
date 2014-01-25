@@ -42,7 +42,14 @@
     UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     [maskView addGestureRecognizer:tapGR];
     
-    UIImageView *imageView = [UIImageView imageViewWithImageName:@"vin_engine_code_example"];
+    NSString *imageName;
+    if (self.type == REExampleTypeVINCode || self.type == REExampleTypeEngineCode) {
+        imageName = @"vin_engine_code_example";
+    }else {
+        imageName = @"regist_code_example";
+    }
+    
+    UIImageView *imageView = [UIImageView imageViewWithImageName:imageName];
     imageView.center = CGPointMake(self.width / 2.0f, self.height / 2.5f);
     [self addSubview:imageView];
     

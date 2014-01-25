@@ -78,13 +78,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationCarListChanged object:nil];
         weakSelf.recallList = recallInfo;
         [weakSelf.tableView reloadData];
-        
-        if (recallInfo.count == 0) {
-            [SVProgressHUD showImage:nil status:@"恭喜，未查到召回记录！"];
-        }else {
-            [SVProgressHUD dismiss];
-        }
-        
+        [SVProgressHUD dismiss];
     } failedBlock:^(NSError *error) {
         weakSelf.recallList = nil;
         [weakSelf.car clearCarInfo];

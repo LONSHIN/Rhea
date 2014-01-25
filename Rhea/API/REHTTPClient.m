@@ -110,7 +110,7 @@
                                                                            error: nil];
                NSDictionary *breakRulesInfo = [response objectForKey:@"Traffic"];
                
-               NSInteger status = [[breakRulesInfo objectForKey:@"errorCode"] integerValue];
+               NSInteger status = [[breakRulesInfo objectForKey:@"status"] integerValue];
                if (status == 0) {
                    succeededBlock([breakRulesInfo objectForKey:@"lists"]);
                }else {

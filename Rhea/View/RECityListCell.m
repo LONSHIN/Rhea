@@ -61,7 +61,7 @@
         
         if (x + cityItem.width > 320.0f) {
             x = 10.0;
-            y += 27.0f;
+            y += 37.0f;
         }
         
         cityItem.frame = CGRectMake(x, y, cityItem.width, cityItem.height);
@@ -95,7 +95,7 @@
         singleLineWidth += size.width + 30;
         if (singleLineWidth > 320.0f) {
             singleLineWidth = 20.0f;
-            height += 27.0f;
+            height += 37.0f;
             i--;
         }
     }

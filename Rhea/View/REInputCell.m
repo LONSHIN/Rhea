@@ -185,7 +185,7 @@
                                             backgroundColor:kStandardRedColor
                                                   textColor:[UIColor whiteColor]
                                                        font:[UIFont systemFontOfSize:12.0f]];
-        questionMarkLabel.frame = CGRectMake(278.0f, 10.0f, 20.0f, 20.0f);
+        questionMarkLabel.frame = CGRectMake(278.0f, 12.0f, 20.0f, 20.0f);
         questionMarkLabel.textAlignment = NSTextAlignmentCenter;
         questionMarkLabel.layer.cornerRadius = 10.0f;
         questionMarkLabel.layer.masksToBounds = YES;

@@ -85,6 +85,7 @@
 		19A0EC28189265F2009868F8 /* icon_60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A0EC27189265F2009868F8 /* icon_60@2x.png */; };
 		19D3F227188FA8710040F684 /* REAbbreviationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D3F226188FA8710040F684 /* REAbbreviationListViewController.m */; };
 		19D3F22A188FAF7B0040F684 /* REDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D3F229188FAF7B0040F684 /* REDetailCell.m */; };
+		19D4C41D18938DBB0085AB19 /* regist_code_example@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19D4C41C18938DBB0085AB19 /* regist_code_example@2x.png */; };
 		19E253EF186D1DA0004B33A5 /* RECityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E253EE186D1DA0004B33A5 /* RECityListCell.m */; };
 		19EC2F161876A727003D1E7F /* RERecallDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EC2F151876A727003D1E7F /* RERecallDetailViewController.m */; };
 		19EC2F191876A75A003D1E7F /* REBreakRulesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EC2F181876A75A003D1E7F /* REBreakRulesDetailViewController.m */; };
@@ -221,6 +222,7 @@
 		19D3F226188FA8710040F684 /* REAbbreviationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REAbbreviationListViewController.m; sourceTree = "<group>"; };
 		19D3F228188FAF7B0040F684 /* REDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDetailCell.h; sourceTree = "<group>"; };
 		19D3F229188FAF7B0040F684 /* REDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REDetailCell.m; sourceTree = "<group>"; };
+		19D4C41C18938DBB0085AB19 /* regist_code_example@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "regist_code_example@2x.png"; sourceTree = "<group>"; };
 		19E253ED186D1DA0004B33A5 /* RECityListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECityListCell.h; sourceTree = "<group>"; };
 		19E253EE186D1DA0004B33A5 /* RECityListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECityListCell.m; sourceTree = "<group>"; };
 		19EC2F141876A727003D1E7F /* RERecallDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RERecallDetailViewController.h; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				19423AB918910606009E0936 /* add_car_text_border_rounded@2x.png */,
 				19423ABA18910606009E0936 /* button@2x.png */,
 				19423ABB18910606009E0936 /* input_bar_bg@2x.png */,
+				19D4C41C18938DBB0085AB19 /* regist_code_example@2x.png */,
 				19423AC118910B8F009E0936 /* add_car_up_rounded@2x.png */,
 				19423AC318911BEF009E0936 /* input_bar_bg_right_angle@2x.png */,
 				19423ACD189128A9009E0936 /* detail_break_rules_normal@2x.png */,
@@ -661,6 +664,7 @@
 				19423AAD1890C1C2009E0936 /* home_page_logo@2x.png in Resources */,
 				19423AAF1890C7F6009E0936 /* section_title_bg@2x.png in Resources */,
 				19423AD3189128A9009E0936 /* detail_recall_highlighted@2x.png in Resources */,
+				19D4C41D18938DBB0085AB19 /* regist_code_example@2x.png in Resources */,
 				192FD115187E8019005D1A3C /* webview_back_normal@2x.png in Resources */,
 				1985C81F18717A130005BB09 /* CarType.json in Resources */,
 				19A0EC2118920FF7009868F8 /* Abbreviation.json in Resources */,

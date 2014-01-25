@@ -23,8 +23,11 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) RECar *currentEditCar;
 @property (nonatomic, strong) REAddCarSucceededBlcok succeededBlock;
+@property (nonatomic, strong) NSString *cityAbbreviation;
+@property (nonatomic, strong) NSString *temporaryLicensePlate;
 
 @property (nonatomic, assign) REUpdateCarListType updateCarListType;
+@property (nonatomic, assign) BOOL viewIsAppear;
 
 @end
 
@@ -36,20 +39,29 @@
 - (id)initWithCar:(RECar *)car succeededBlock:(REAddCarSucceededBlcok)succeededBlock
 {
     if (self = [super init]) {
-        self.currentEditCar = car;
-        self.updateCarListType = REUpdateCarListTypeUpdateExistCar;
-        if (self.currentEditCar == nil) {
+        self.currentEditCar = [[RECar alloc] init];
+        if (car == nil) {
             self.updateCarListType = REUpdateCarListTypeSaveNewCar;
-            self.currentEditCar = [[RECar alloc] init];
+        }else{
+            self.updateCarListType = REUpdateCarListTypeUpdateExistCar;
+            [self.currentEditCar updateWithCar:car];
         }
         
         NSString *intactVin = self.currentEditCar.intactVinCode;
         if (![intactVin isEqualToString:@""] && [self.currentEditCar.licensePlateNumber isEqualToString:@""]) {
             NSInteger codeLength = self.currentEditCar.city.vinCodeNumber;
-            self.currentEditCar.vinCode = [intactVin substringFromIndex:intactVin.length - codeLength];
+            if (codeLength == 0) {
+                self.currentEditCar.vinCode = intactVin;
+            }else{
+                self.currentEditCar.vinCode = [intactVin substringFromIndex:intactVin.length - codeLength];
+            }
         }
         if ([self.currentEditCar.licensePlateNumber isEqualToString:@""]) {
-            self.currentEditCar.licensePlateNumber = self.currentEditCar.city.abbreviation;
+            self.cityAbbreviation = self.currentEditCar.city.abbreviation;
+            self.temporaryLicensePlate = @"";
+        }else{
+            self.cityAbbreviation = [self.currentEditCar.licensePlateNumber substringToIndex:1];
+            self.temporaryLicensePlate = [self.currentEditCar.licensePlateNumber substringFromIndex:1];
         }
 
         self.succeededBlock = succeededBlock;
@@ -72,6 +84,20 @@
     [self configBackground];
     [self configTableView];
     [self configRightBarButton];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.viewIsAppear = YES;
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    self.viewIsAppear = NO;
 }
 
 
@@ -147,7 +173,7 @@
     RECity *city = self.currentEditCar.city;
     
     if (city.needVinCode) {
-        NSString *str = city.vinCodeNumber == 0 ? @"请输入车架号(VIN)" : [NSString stringWithFormat:@"请输入车架号(VIN)后%d位", city.vinCodeNumber];
+        NSString *str = city.vinCodeNumber == 0 ? @"请输入车辆识别号(VIN)" : [NSString stringWithFormat:@"请输入车辆识别号后%d位", city.vinCodeNumber];
         [array addObject:str];
     }else{
         [array addObject:@"可不填"];
@@ -181,7 +207,7 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
         REInputCell *cell = (REInputCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         if (i == 1) {
-            self.currentEditCar.licensePlateNumber = [NSString stringWithFormat:@"%@%@",[self.currentEditCar.licensePlateNumber substringToIndex:1], cell.textField.text];
+            self.currentEditCar.licensePlateNumber = [NSString stringWithFormat:@"%@%@", self.cityAbbreviation, cell.textField.text];
         }else if (i == 2) {
             self.currentEditCar.vinCode = cell.textField.text;
         }else if (i == 3) {
@@ -197,7 +223,7 @@
     }
     
     if (city.needVinCode && self.currentEditCar.vinCode.length < city.vinCodeNumber) {
-        [SVProgressHUD showImage:nil status:@"请输入正确车架号"];
+        [SVProgressHUD showImage:nil status:@"请输入正确车辆识别号"];
         return;
     }
     
@@ -249,6 +275,8 @@
         cell = [[REInputCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    [cell.contentView removeAllSubviews];
+    
     NSInteger row = [indexPath row];
     RECity *city = self.currentEditCar.city;
     
@@ -262,18 +290,18 @@
         }
         
         NSArray *titleArray = @[@"车牌号",
-                                city.vinCodeNumber == 0 ? @"车架号" : [NSString stringWithFormat:@"车架号后%d位",city.vinCodeNumber],
-                                city.engineCodeNumber == 0 ? @"发动机号" : [NSString stringWithFormat:@"发动机号后%d位", city.engineCodeNumber],
-                                city.registCodeNumber == 0 ? @"登记证书号" : [NSString stringWithFormat:@"登记证书号后%d位", city.registCodeNumber]];
+                                city.vinCodeNumber == 0 ? @"车辆识别号" : [NSString stringWithFormat:@"车辆识别号\n后%d位",city.vinCodeNumber],
+                                city.engineCodeNumber == 0 ? @"发动机号" : [NSString stringWithFormat:@"发动机号\n后%d位", city.engineCodeNumber],
+                                city.registCodeNumber == 0 ? @"登记证书号" : [NSString stringWithFormat:@"登记证书号\n后%d位", city.registCodeNumber]];
 
-        NSArray *contentArray = @[[self.currentEditCar.licensePlateNumber substringFromIndex:1],
+        NSArray *contentArray = @[self.temporaryLicensePlate,
                                   self.currentEditCar.vinCode,
                                   self.currentEditCar.engineCode,
                                   self.currentEditCar.registCode];
         NSArray *placehoderArray = [self textFieldPlacehoderArray];
         if (row == 1) {
             [cell updateWithTitle:titleArray[row - 1]
-                     abbreviation:[self.currentEditCar.licensePlateNumber substringToIndex:1]
+                     abbreviation:self.cityAbbreviation
                     textFieldText:contentArray[row - 1]
                       placeholder:placehoderArray[row - 1]];
             
@@ -299,11 +327,11 @@
             [weakSelf.tableView selectRowAtIndexPath:nextIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
             [weakSelf tableView:weakSelf.tableView didSelectRowAtIndexPath:nextIndexPath];
         };
-        
+
         cell.deselectedBlock = ^{
             if (row == 1) {
-                weakSelf.currentEditCar.licensePlateNumber = [NSString stringWithFormat:@"%@%@",[weakSelf.currentEditCar.licensePlateNumber substringToIndex:1], weakCell.textField.text];
-            }else if (row == 2) {
+                weakSelf.temporaryLicensePlate = weakCell.textField.text;
+            }else if (row == 2 && weakSelf.viewIsAppear) {
                 weakSelf.currentEditCar.vinCode = weakCell.textField.text;
             }else if (row == 3) {
                 weakSelf.currentEditCar.engineCode = weakCell.textField.text;
@@ -321,8 +349,7 @@
 {
     __weak REAddCarViewController *weakSelf = self;
     REAbbreviationListViewController *vc = [[REAbbreviationListViewController alloc] initWithSelectBlock:^(NSString *abbreviation) {
-        NSString *licenseNumber = weakSelf.currentEditCar.licensePlateNumber;
-        weakSelf.currentEditCar.licensePlateNumber = [NSString stringWithFormat:@"%@%@", abbreviation, [licenseNumber substringFromIndex:1]];
+        weakSelf.cityAbbreviation = abbreviation;
         [weakSelf.tableView reloadData];
     }];
     [self.navigationController pushViewController:vc animated:YES];
@@ -333,7 +360,16 @@
 {
     [self.view hideKeyboard];
     
-    REExampleView *view = [[REExampleView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, self.view.height) type:REExampleTypeVINCode];
+    REExampleType type;
+    if (row == 2) {
+        type = REExampleTypeVINCode;
+    }else if (row == 3){
+        type = REExampleTypeEngineCode;
+    }else {
+        type = REExampleTypeRegistCode;
+    }
+    
+    REExampleView *view = [[REExampleView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, self.view.height) type:type];
     [self.view addSubview:view];
 }
 
@@ -361,10 +397,19 @@
 {
     NSInteger row = [indexPath row];
     if (row == 0) {
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
         __weak REAddCarViewController *weakSelf = self;
         RECityListViewController *cityListVC = [[RECityListViewController alloc] initWithSelectCityBlcok:^(RECity *selectCity) {
             weakSelf.currentEditCar.city = selectCity;
-            weakSelf.currentEditCar.licensePlateNumber = [NSString stringWithFormat:@"%@%@",[weakSelf.currentEditCar.licensePlateNumber substringFromIndex:1],selectCity.abbreviation];
+            weakSelf.cityAbbreviation = selectCity.abbreviation;
+            if (![weakSelf.currentEditCar.intactVinCode isEqualToString:@""]){
+                NSInteger codeLength = selectCity.vinCodeNumber;
+                if (selectCity.vinCodeNumber == 0) {
+                    weakSelf.currentEditCar.vinCode = weakSelf.currentEditCar.intactVinCode;
+                }else{
+                    weakSelf.currentEditCar.vinCode = [weakSelf.currentEditCar.intactVinCode substringFromIndex:weakSelf.currentEditCar.intactVinCode.length - codeLength];
+                }
+            }
             [weakSelf.tableView reloadData];
         }];
         [self.navigationController pushViewController:cityListVC animated:YES];

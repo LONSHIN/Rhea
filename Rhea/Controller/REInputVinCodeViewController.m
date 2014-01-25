@@ -29,11 +29,12 @@
 - (id)initWithCar:(RECar *)car succeededBlock:(REAddCarSucceededBlcok)succeededBlcok
 {
     if (self = [super init]) {
-        self.currentEditCar = car;
-        self.updateCarListType = REUpdateCarListTypeUpdateExistCar;
-        if (self.currentEditCar == nil) {
+         self.currentEditCar = [[RECar alloc] init];
+        if (car == nil) {
             self.updateCarListType = REUpdateCarListTypeSaveNewCar;
-            self.currentEditCar = [[RECar alloc] init];
+        }else {
+            self.updateCarListType = REUpdateCarListTypeUpdateExistCar;
+            [self.currentEditCar updateWithCar:car];
         }
         self.succeededBlock = succeededBlcok;
     }
@@ -109,7 +110,7 @@
     
     [self.view addSubview:self.textField];
     
-    UIImageView *exampleView = [UIImageView imageViewWithImageName:@"example"];
+    UIImageView *exampleView = [UIImageView imageViewWithImageName:@"vin_engine_code_example"];
     exampleView.frame = CGRectMake(7.0f, bgView.height + 7.0f, exampleView.width, exampleView.height);
     [self.view addSubview:exampleView];
 }
