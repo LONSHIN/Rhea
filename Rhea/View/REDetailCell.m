@@ -62,7 +62,7 @@
     UILabel *indexLabel = [UILabel labelWithText:[NSString stringWithFormat:@"第%d条记录", index]
                                  backgroundColor:[UIColor clearColor]
                                        textColor:[UIColor whiteColor]
-                                            font:[UIFont systemFontOfSize:14.0]];
+                                            font:[UIFont systemFontOfSize:12.0]];
     indexLabel.frame = CGRectMake(7.0f, y, 306.0f, 25.0f);
     
     indexLabel.textAlignment = NSTextAlignmentCenter;

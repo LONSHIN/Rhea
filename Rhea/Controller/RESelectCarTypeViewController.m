@@ -81,9 +81,10 @@ typedef void(^RESelectBlock)(id block);
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     RECarType *carType = [self.carTypeList objectAtIndex:indexPath.row];
-    cell.textLabel.font = [UIFont systemFontOfSize:14.0f];
+    cell.textLabel.font = [UIFont systemFontOfSize:17.0f];
     cell.textLabel.text = carType.name;
     return cell;
 }
@@ -91,7 +92,7 @@ typedef void(^RESelectBlock)(id block);
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 40.0f;
+    return 45.0f;
 }
 
 

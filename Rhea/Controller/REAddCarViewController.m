@@ -68,7 +68,7 @@
 {
     [super viewDidLoad];
     
-    self.title = @"添加车辆";
+    self.title = self.updateCarListType == REUpdateCarListTypeSaveNewCar ? @"添加车辆" : @"修改车辆";
     [self configBackground];
     [self configTableView];
     [self configRightBarButton];
@@ -106,16 +106,16 @@
     captionBgView.image = [[UIImage imageNamed:@"add_car_caption_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(10.0f, 10.0f, 3.0f, 10.0f)];
     [footerView addSubview:captionBgView];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 15.0f, 292.0f, 25.0f)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 13.0f, 292.0f, 30.0f)];
     label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor clearColor];
     label.numberOfLines = 0;
-    label.font = [UIFont systemFontOfSize:10.0];
+    label.font = [UIFont systemFontOfSize:12.0];
     label.text = @"以上车辆信息仅用于您的车辆违章查询，您的车辆信息将严格保密，请放心使用。";
     [captionBgView addSubview:label];
     
     UIButton *button = [UIButton buttonWithText:@"违章查询"
-                                           font:[UIFont systemFontOfSize:14.0f]
+                                           font:[UIFont systemFontOfSize:17.0f]
                                       textColor:[UIColor whiteColor]
                                highlightedColor:[UIColor lightGrayColor]
                                          target:self
@@ -131,7 +131,7 @@
 - (void)configRightBarButton
 {
     UIButton *button = [UIButton buttonWithText:@"查询"
-                                           font:[UIFont systemFontOfSize:12.0f]
+                                           font:[UIFont systemFontOfSize:14.0f]
                                       textColor:[UIColor whiteColor]
                                highlightedColor:[UIColor lightGrayColor]
                                          target:self

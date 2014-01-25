@@ -52,7 +52,7 @@
     for (NSInteger i = 0; i < citys.count; i++) {
         RECity *city = [citys objectAtIndex:i];
         UIButton *cityItem = [UIButton buttonWithText:city.name
-                                                 font:[UIFont systemFontOfSize:13.0f]
+                                                 font:[UIFont systemFontOfSize:14.0f]
                                             textColor:kStandardBlueColor
                                      highlightedColor:[UIColor grayColor]
                                                target:self
@@ -69,6 +69,10 @@
         
         x += cityItem.width + 30.0f;
     }
+    
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(10.0f, [RECityListCell heightForCitys:citys] - 0.5f, self.width, 0.5f)];
+    line.backgroundColor = [UIColor colorWithHexString:@"afafaf"];
+    [self.contentView addSubview:line];
 }
 
 
@@ -82,7 +86,7 @@
 
 + (CGFloat)heightForCitys:(NSArray *)citys
 {
-    CGFloat height = 40.0f;
+    CGFloat height = 45.0f;
     CGFloat singleLineWidth = 20.0f;
     for (NSInteger i = 0; i < citys.count; i++) {
         RECity *city = citys[i];

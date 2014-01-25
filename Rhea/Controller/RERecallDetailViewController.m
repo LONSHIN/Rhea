@@ -78,7 +78,13 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationCarListChanged object:nil];
         weakSelf.recallList = recallInfo;
         [weakSelf.tableView reloadData];
-        [SVProgressHUD dismiss];
+        
+        if (recallInfo.count == 0) {
+            [SVProgressHUD showImage:nil status:@"恭喜，未查到召回记录！"];
+        }else {
+            [SVProgressHUD dismiss];
+        }
+        
     } failedBlock:^(NSError *error) {
         weakSelf.recallList = nil;
         [weakSelf.car clearCarInfo];
@@ -142,7 +148,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    REDetailHeaderView *headerView = [[REDetailHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f) title:@"您输入的车辆VIN码" detail:self.car.intactVinCode recordCount:[NSString stringWithFormat:@"%d",self.recallList.count]];
+    REDetailHeaderView *headerView = [[REDetailHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f) title:@"您输入的车辆VIN码" detail:self.car.intactVinCode recordCount:[NSString stringWithFormat:@"%d", self.car.recallCount]];
     
     return headerView;
 }

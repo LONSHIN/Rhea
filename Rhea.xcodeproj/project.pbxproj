@@ -21,9 +21,7 @@
 		192FD126187E874C005D1A3C /* banner_image_place_holder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD11A187E874C005D1A3C /* banner_image_place_holder@2x.png */; };
 		192FD127187E874C005D1A3C /* banner_place_holder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD11B187E874C005D1A3C /* banner_place_holder@2x.png */; };
 		192FD12C187E874C005D1A3C /* item_back_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD120187E874C005D1A3C /* item_back_normal@2x.png */; };
-		192FD12F187E874C005D1A3C /* more_car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD123187E874C005D1A3C /* more_car@2x.png */; };
 		192FD130187E874C005D1A3C /* navigation_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD124187E874C005D1A3C /* navigation_bar@2x.png */; };
-		192FD131187E874C005D1A3C /* orange_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192FD125187E874C005D1A3C /* orange_button@2x.png */; };
 		192FD134187E88F9005D1A3C /* REMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FD133187E88F9005D1A3C /* REMoreViewController.m */; };
 		192FD138187E897B005D1A3C /* CNSShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FD137187E897B005D1A3C /* CNSShareManager.m */; };
 		192FD13D187E8981005D1A3C /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 192FD13A187E8981005D1A3C /* libWeChatSDK.a */; };
@@ -77,7 +75,6 @@
 		1974D41B188526AB000AFEA1 /* REManageCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974D41A188526AB000AFEA1 /* REManageCarViewController.m */; };
 		1974D41E188528CD000AFEA1 /* RECarDeleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1974D41D188528CD000AFEA1 /* RECarDeleteCell.m */; };
 		1974D42218855006000AFEA1 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1974D42018855006000AFEA1 /* libMobClickLibrary.a */; };
-		1974D4241885538E000AFEA1 /* 58x58ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1974D4231885538E000AFEA1 /* 58x58ICON@2x.png */; };
 		1985C81A18715D290005BB09 /* RECar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1985C81918715D290005BB09 /* RECar.m */; };
 		1985C81D187177B00005BB09 /* RECarType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1985C81C187177AF0005BB09 /* RECarType.m */; };
 		1985C81F18717A130005BB09 /* CarType.json in Resources */ = {isa = PBXBuildFile; fileRef = 1985C81E18717A130005BB09 /* CarType.json */; };
@@ -85,6 +82,7 @@
 		19A0EC2118920FF7009868F8 /* Abbreviation.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A0EC2018920FF7009868F8 /* Abbreviation.json */; };
 		19A0EC2318923414009868F8 /* vin_engine_code_example@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A0EC2218923414009868F8 /* vin_engine_code_example@2x.png */; };
 		19A0EC26189250EC009868F8 /* REExampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A0EC25189250EC009868F8 /* REExampleView.m */; };
+		19A0EC28189265F2009868F8 /* icon_60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A0EC27189265F2009868F8 /* icon_60@2x.png */; };
 		19D3F227188FA8710040F684 /* REAbbreviationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D3F226188FA8710040F684 /* REAbbreviationListViewController.m */; };
 		19D3F22A188FAF7B0040F684 /* REDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D3F229188FAF7B0040F684 /* REDetailCell.m */; };
 		19E253EF186D1DA0004B33A5 /* RECityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E253EE186D1DA0004B33A5 /* RECityListCell.m */; };
@@ -124,9 +122,7 @@
 		192FD11A187E874C005D1A3C /* banner_image_place_holder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banner_image_place_holder@2x.png"; sourceTree = "<group>"; };
 		192FD11B187E874C005D1A3C /* banner_place_holder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banner_place_holder@2x.png"; sourceTree = "<group>"; };
 		192FD120187E874C005D1A3C /* item_back_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item_back_normal@2x.png"; sourceTree = "<group>"; };
-		192FD123187E874C005D1A3C /* more_car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_car@2x.png"; sourceTree = "<group>"; };
 		192FD124187E874C005D1A3C /* navigation_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_bar@2x.png"; sourceTree = "<group>"; };
-		192FD125187E874C005D1A3C /* orange_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange_button@2x.png"; sourceTree = "<group>"; };
 		192FD132187E88F9005D1A3C /* REMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMoreViewController.h; sourceTree = "<group>"; };
 		192FD133187E88F9005D1A3C /* REMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REMoreViewController.m; sourceTree = "<group>"; };
 		192FD136187E897B005D1A3C /* CNSShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNSShareManager.h; sourceTree = "<group>"; };
@@ -209,7 +205,6 @@
 		1974D41D188528CD000AFEA1 /* RECarDeleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECarDeleteCell.m; sourceTree = "<group>"; };
 		1974D42018855006000AFEA1 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		1974D42118855006000AFEA1 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
-		1974D4231885538E000AFEA1 /* 58x58ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "58x58ICON@2x.png"; sourceTree = "<group>"; };
 		1985C81818715D290005BB09 /* RECar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECar.h; sourceTree = "<group>"; };
 		1985C81918715D290005BB09 /* RECar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECar.m; sourceTree = "<group>"; };
 		1985C81B187177AF0005BB09 /* RECarType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECarType.h; sourceTree = "<group>"; };
@@ -221,6 +216,7 @@
 		19A0EC2218923414009868F8 /* vin_engine_code_example@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vin_engine_code_example@2x.png"; sourceTree = "<group>"; };
 		19A0EC24189250EC009868F8 /* REExampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REExampleView.h; sourceTree = "<group>"; };
 		19A0EC25189250EC009868F8 /* REExampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REExampleView.m; sourceTree = "<group>"; };
+		19A0EC27189265F2009868F8 /* icon_60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_60@2x.png"; sourceTree = "<group>"; };
 		19D3F225188FA8710040F684 /* REAbbreviationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAbbreviationListViewController.h; sourceTree = "<group>"; };
 		19D3F226188FA8710040F684 /* REAbbreviationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REAbbreviationListViewController.m; sourceTree = "<group>"; };
 		19D3F228188FAF7B0040F684 /* REDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDetailCell.h; sourceTree = "<group>"; };
@@ -290,11 +286,8 @@
 				192FD11A187E874C005D1A3C /* banner_image_place_holder@2x.png */,
 				192FD11B187E874C005D1A3C /* banner_place_holder@2x.png */,
 				192FD120187E874C005D1A3C /* item_back_normal@2x.png */,
-				192FD123187E874C005D1A3C /* more_car@2x.png */,
 				192FD124187E874C005D1A3C /* navigation_bar@2x.png */,
-				192FD125187E874C005D1A3C /* orange_button@2x.png */,
 				1932C66D1884D7FB0026B0A5 /* item_more_normal@2x.png */,
-				1974D4231885538E000AFEA1 /* 58x58ICON@2x.png */,
 				19423AAA1890BB65009E0936 /* last_cell_shadow@2x.png */,
 				19423AAE1890C7F6009E0936 /* section_title_bg@2x.png */,
 				19423AB01890C962009E0936 /* homepage_add_car_bg@2x.png */,
@@ -310,6 +303,7 @@
 				19423ACF189128A9009E0936 /* detail_recall_highlighted@2x.png */,
 				19423AD0189128A9009E0936 /* detail_recall_normal@2x.png */,
 				19A0EC2218923414009868F8 /* vin_engine_code_example@2x.png */,
+				19A0EC27189265F2009868F8 /* icon_60@2x.png */,
 				1942D9571869619F00B87C64 /* Images.xcassets */,
 			);
 			path = Resource;
@@ -679,14 +673,12 @@
 				19423AD2189128A9009E0936 /* detail_break_rules_highlighted@2x.png in Resources */,
 				19423ABC18910606009E0936 /* add_car_caption_bg@2x.png in Resources */,
 				19423AD4189128A9009E0936 /* detail_recall_normal@2x.png in Resources */,
-				1974D4241885538E000AFEA1 /* 58x58ICON@2x.png in Resources */,
 				192FD118187E8019005D1A3C /* webview_refresh_hithlighted@2x.png in Resources */,
 				19423ABF18910606009E0936 /* button@2x.png in Resources */,
 				1932C66E1884D7FB0026B0A5 /* item_more_normal@2x.png in Resources */,
-				192FD131187E874C005D1A3C /* orange_button@2x.png in Resources */,
 				192FD114187E8019005D1A3C /* webview_back_hithlighted@2x.png in Resources */,
 				1942D9581869619F00B87C64 /* Images.xcassets in Resources */,
-				192FD12F187E874C005D1A3C /* more_car@2x.png in Resources */,
+				19A0EC28189265F2009868F8 /* icon_60@2x.png in Resources */,
 				19423AB31890E483009E0936 /* bg.jpg in Resources */,
 				192FD119187E8019005D1A3C /* webview_refresh_normal@2x.png in Resources */,
 				19423AB11890C962009E0936 /* homepage_add_car_bg@2x.png in Resources */,

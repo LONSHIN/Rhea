@@ -190,7 +190,7 @@ CNSBannerViewDataSource, CNSBannerViewDelegate, REHomePageCellDelegate>
 {
     __weak REHomePageViewController *weakSelf = self;
     
-    REAddCarViewController *addVC = [[REAddCarViewController alloc] initWithCar:nil succeededBlock:^(RECar *newCar) {
+    REAddCarViewController *addVC = [[REAddCarViewController alloc] initWithCar:car succeededBlock:^(RECar *newCar) {
         [weakSelf pushToDetailListViewControllerWithCar:newCar showType:REDetailTypeBreakRules];
     }];
     RENavigationController *navc = [[RENavigationController alloc] initWithRootViewController:addVC];
@@ -289,7 +289,8 @@ CNSBannerViewDataSource, CNSBannerViewDelegate, REHomePageCellDelegate>
                                      backgroundColor:[UIColor clearColor]
                                            textColor:[UIColor whiteColor]
                                                 font:[UIFont systemFontOfSize:14.0f]];
-        titleLabel.center = CGPointMake(titleView.width / 2.0f, titleView.height / 2.0f);
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.frame = CGRectMake(0.0f, -3.0f, titleView.width, titleView.height);
         [titleView addSubview:titleLabel];
     }else {
         RECar *car = [self.carList objectAtIndex:row - 1];

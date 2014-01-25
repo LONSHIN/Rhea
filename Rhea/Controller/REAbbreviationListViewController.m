@@ -81,9 +81,10 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
 
-    cell.textLabel.font = [UIFont systemFontOfSize:14.0f];
+    cell.textLabel.font = [UIFont systemFontOfSize:17.0f];
     cell.textLabel.text = [self.abbreviationList objectAtIndex:indexPath.row];
     return cell;
 }
@@ -91,7 +92,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 40.0f;
+    return 45.0f;
 }
 
 

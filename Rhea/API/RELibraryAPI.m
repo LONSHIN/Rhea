@@ -65,11 +65,13 @@
 
 + (BOOL)saveCar:(RECar *)addCar
 {
+    if (addCar == nil) {
+        return NO;
+    }
+    
     NSArray *carArray = [NSKeyedUnarchiver unarchiveObjectWithFile:kCarPath];
     NSMutableArray *carList = [[NSMutableArray alloc] init];
-    for (RECar *car in carArray) {
-        [carList addObject:car];
-    }
+    [carList addObjectsFromArray:carArray];
     [carList addObject:addCar];
     return [NSKeyedArchiver archiveRootObject:carList toFile:kCarPath];
 }
@@ -78,24 +80,34 @@
 
 + (BOOL)updateCar:(RECar *)updateCar
 {
-    NSArray *carArray = [NSKeyedUnarchiver unarchiveObjectWithFile:kCarPath];
-    NSMutableArray *carList = [[NSMutableArray alloc] init];
-    
-    for (RECar *car in carArray) {
-        if (![car.guid isEqualToString:updateCar.guid]) {
-            [carList addObject:car];
-        }
+    if (updateCar == nil) {
+        return NO;
     }
     
-    [carList addObject:updateCar];
+    NSArray *carArray = [NSKeyedUnarchiver unarchiveObjectWithFile:kCarPath];
+    NSMutableArray *carList = [[NSMutableArray alloc] init];
+    [carList addObjectsFromArray:carArray];
+    
+    for (RECar *car in carList) {
+        if ([car.guid isEqualToString:updateCar.guid]) {
+            [car updateWithCar:updateCar];
+            break;
+        }
+    }
+
     return [NSKeyedArchiver archiveRootObject:carList toFile:kCarPath];
 }
 
 
 + (BOOL)deleteCar:(RECar *)deleteCar
 {
+    if (deleteCar == nil) {
+        return NO;
+    }
+    
     NSArray *carArray = [RELibraryAPI getAllSavedCar];
     NSMutableArray *currentCarArray = [[NSMutableArray alloc] init];
+    
     for (RECar *car in carArray) {
         if (![car.guid isEqualToString:deleteCar.guid]) {
             [currentCarArray addObject:car];

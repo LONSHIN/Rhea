@@ -42,7 +42,7 @@
 
 - (void)configLine
 {
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(10.0f, 39.5f, 310.0f, 0.5f)];
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(10.0f, 44.5f, 310.0f, 0.5f)];
     line.backgroundColor = [UIColor grayColorWithDeep:192];
     [self addSubview:line];
 }

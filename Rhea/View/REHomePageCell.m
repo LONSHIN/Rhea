@@ -47,7 +47,7 @@
     UIView *breakRulesInfoView = [self infoViewWithFrame:CGRectMake(0.0f, 0.0, bgView.width, bgView.height / 2.0f)
                                                    title:haveCarInfo ? car.licensePlateNumber : @"未输入车辆信息"
                                           titleHighlight:haveCarInfo ? NO : YES
-                                               minorInfo:car.city.name
+                                               minorInfo:haveCarInfo ? car.city.name : @""
                                               minorTitle:@"未处理违章次数:"
                                                   number:haveCarInfo ? [NSString stringWithFormat:@"%d", car.breakRulesCount] : @"?"
                                              bubbleColor:haveCarInfo ? kStandardBlueColor : kStandardRedColor];
@@ -61,7 +61,7 @@
     UIView *recallInfoView = [self infoViewWithFrame:CGRectMake(0.0f, breakRulesInfoView.height, bgView.width, bgView.height / 2.0f)
                                                title:haveVinCodeInfo ? car.intactVinCode : @"未输入完整车辆识别代码(VIN)"
                                       titleHighlight:haveVinCodeInfo ? NO : YES
-                                           minorInfo:haveVinCodeInfo ? [NSString stringWithFormat:@"%@%@", car.brand, car.series] : @""
+                                           minorInfo:haveVinCodeInfo ? [NSString stringWithFormat:@"%@", car.series] : @""
                                           minorTitle:@"召回次数:"
                                               number:haveVinCodeInfo ? [NSString stringWithFormat:@"%d", car.recallCount] : @"?"
                                          bubbleColor:haveVinCodeInfo ? kStandardGreenColor: kStandardRedColor];
@@ -87,24 +87,9 @@
     UILabel *titleLabel = [UILabel labelWithText:title
                                  backgroundColor:[UIColor clearColor]
                                        textColor:needTitleHighlight ? kStandardRedColor : [UIColor blackColor]
-                                            font:[UIFont systemFontOfSize:14.0f]];
-    titleLabel.frame = CGRectMake(6.0f, 11.0f, titleLabel.width, titleLabel.height);
+                                            font:[UIFont systemFontOfSize:needTitleHighlight ? 12.0f : 14.0f]];
+    titleLabel.frame = CGRectMake(6.0f, 0.0f, titleLabel.width, contentView.height);
     [contentView addSubview:titleLabel];
-    
-    UILabel *minorTitleLable = [UILabel labelWithText:minorTitle
-                                 backgroundColor:[UIColor clearColor]
-                                       textColor:[UIColor lightGrayColor]
-                                            font:[UIFont systemFontOfSize:12.0f]];
-    minorTitleLable.frame = CGRectMake(contentView.width - 44.0f - minorTitleLable.width, 12.0f, minorTitleLable.width, minorTitleLable.height);
-    [contentView addSubview:minorTitleLable];
-    
-    UILabel *minorInfoLabel = [UILabel labelWithText:minorInfo
-                                     backgroundColor:[UIColor clearColor]
-                                           textColor:[UIColor lightGrayColor]
-                                                font:[UIFont systemFontOfSize:12.0f]];
-    minorInfoLabel.textAlignment = NSTextAlignmentRight;
-    minorInfoLabel.frame = CGRectMake(titleLabel.frame.origin.x + titleLabel.width + 10, 12.0f, contentView.width - minorTitleLable.frame.origin.x - 10 - titleLabel.frame.origin.x - titleLabel.width - 10, minorInfoLabel.height);
-    //[contentView addSubview:minorInfoLabel];
     
     UILabel *numberLabel = [UILabel labelWithText:number
                                   backgroundColor:bubbleColor
@@ -115,6 +100,21 @@
     [contentView addSubview:numberLabel];
     numberLabel.layer.cornerRadius = 10.0f;
     numberLabel.layer.masksToBounds = YES;
+    
+    UILabel *minorTitleLable = [UILabel labelWithText:minorTitle
+                                 backgroundColor:[UIColor clearColor]
+                                       textColor:[UIColor lightGrayColor]
+                                            font:[UIFont systemFontOfSize:12.0f]];
+    minorTitleLable.frame = CGRectMake(contentView.width - numberLabel.width - minorTitleLable.width - 10.0f, 0.0f, minorTitleLable.width, contentView.height);
+    [contentView addSubview:minorTitleLable];
+    
+    UILabel *minorInfoLabel = [UILabel labelWithText:minorInfo
+                                     backgroundColor:[UIColor clearColor]
+                                           textColor:[UIColor lightGrayColor]
+                                                font:[UIFont systemFontOfSize:12.0f]];
+    minorInfoLabel.textAlignment = NSTextAlignmentRight;
+    minorInfoLabel.frame = CGRectMake(titleLabel.frame.origin.x + titleLabel.width + 10, 0.0f, contentView.width - minorTitleLable.width - titleLabel.width - numberLabel.width - 30.0f, contentView.height);
+    [contentView addSubview:minorInfoLabel];
     
     return contentView;
 }

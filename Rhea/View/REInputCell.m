@@ -129,7 +129,7 @@
         [contentView addSubview:borderView];
         
         UIButton *button = [UIButton buttonWithText:abbreviation
-                                               font:[UIFont systemFontOfSize:12.0f]
+                                               font:[UIFont systemFontOfSize:14.0f]
                                           textColor:[UIColor blackColor]
                                    highlightedColor:[UIColor grayColor]
                                              target:self
@@ -174,22 +174,30 @@
         UILabel *detailLabel = [UILabel labelWithText:detail
                                       backgroundColor:[UIColor clearColor]
                                             textColor:[UIColor blackColor]
-                                                 font:[UIFont systemFontOfSize:12.0f]];
+                                                 font:[UIFont systemFontOfSize:14.0f]];
         detailLabel.frame = CGRectMake(107.0f, 0.0f, detailLabel.width, contentView.height);
         [contentView addSubview:detailLabel];
     }
     
     if (questionMark) {
-        UIButton *questionMarkButton = [UIButton buttonWithText:@"?"
+        
+        UILabel *questionMarkLabel = [UILabel labelWithText:@"?"
+                                            backgroundColor:kStandardRedColor
+                                                  textColor:[UIColor whiteColor]
+                                                       font:[UIFont systemFontOfSize:12.0f]];
+        questionMarkLabel.frame = CGRectMake(278.0f, 10.0f, 20.0f, 20.0f);
+        questionMarkLabel.textAlignment = NSTextAlignmentCenter;
+        questionMarkLabel.layer.cornerRadius = 10.0f;
+        questionMarkLabel.layer.masksToBounds = YES;
+        [contentView addSubview:questionMarkLabel];
+        
+        UIButton *questionMarkButton = [UIButton buttonWithText:@""
                                                            font:[UIFont systemFontOfSize:14.0f]
                                                       textColor:[UIColor whiteColor]
-                                               highlightedColor:[UIColor lightGrayColor]
+                                               highlightedColor:[UIColor whiteColor]
                                                          target:self
                                                          action:@selector(handleQuestionMarkButtonTapped:)];
-        questionMarkButton.frame = CGRectMake(278.0f, 10.0f, 20.0f, 20.0f);
-        questionMarkButton.backgroundColor = kStandardRedColor;
-        questionMarkButton.layer.cornerRadius = 10.0f;
-        questionMarkButton.layer.masksToBounds = YES;
+        questionMarkButton.frame = CGRectMake(270.0f, 0.0f, 40.0f, contentView.height);
         [contentView addSubview:questionMarkButton];
     }
     

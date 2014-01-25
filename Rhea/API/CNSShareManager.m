@@ -68,7 +68,7 @@ NSString *const kApplicationDownloadUrl = @"https://itunes.apple.com/cn/app/id79
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"车小弟－查违章 查召回";
     message.description = @"";
-    [message setThumbImage:[UIImage imageNamed:@"58x58ICON"]];
+    [message setThumbImage:[UIImage imageNamed:@"icon_60"]];
     
     WXAppExtendObject *extendObject = [WXAppExtendObject object];
     extendObject.url = kApplicationDownloadUrl;

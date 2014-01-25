@@ -55,13 +55,13 @@
 {
     UIImage *buttonBg = [[UIImage imageNamed:@"button"] resizableImageWithCapInsets:UIEdgeInsetsMake(2.0f, 3.0f, 2.0f, 3.0f)];
     
-    UIButton *changeCarButton = [UIButton buttonWithText:@"车辆管理" font:[UIFont systemFontOfSize:14.0f] textColor:[UIColor whiteColor] highlightedColor:[UIColor whiteColor] target:self action:@selector(handleManageCarButtonTapped:)];
+    UIButton *changeCarButton = [UIButton buttonWithText:@"车辆管理" font:[UIFont systemFontOfSize:17.0f] textColor:[UIColor whiteColor] highlightedColor:[UIColor whiteColor] target:self action:@selector(handleManageCarButtonTapped:)];
     [changeCarButton setBackgroundImage:buttonBg forState:UIControlStateNormal];
     changeCarButton.frame = CGRectMake(0.0f, 0.0f, 150.0f, 40.0f);
     changeCarButton.center = CGPointMake(160.0f, [UIScreen mainScreen].bounds.size.height - (kScreenIs4InchRetina?150.0f:130.0f) - 64.0f);
     [self.view addSubview:changeCarButton];
     
-    UIButton *shareAppButton = [UIButton buttonWithText:@"分享给好友" font:[UIFont systemFontOfSize:14.0f] textColor:[UIColor whiteColor] highlightedColor:[UIColor whiteColor] target:self action:@selector(handleShareAppButtonTapped:)];
+    UIButton *shareAppButton = [UIButton buttonWithText:@"分享给好友" font:[UIFont systemFontOfSize:17.0f] textColor:[UIColor whiteColor] highlightedColor:[UIColor whiteColor] target:self action:@selector(handleShareAppButtonTapped:)];
     [shareAppButton setBackgroundImage:buttonBg forState:UIControlStateNormal];
     shareAppButton.frame = CGRectMake(0.0f, 0.0f, 150.0f, 40.0f);
     shareAppButton.center = CGPointMake(160.0f, [UIScreen mainScreen].bounds.size.height - (kScreenIs4InchRetina?95.0f:75.0f) - 64.0f);

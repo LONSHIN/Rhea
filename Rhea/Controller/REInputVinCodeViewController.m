@@ -14,6 +14,7 @@
 <UITextFieldDelegate>
 
 @property (nonatomic, strong) RECar *currentEditCar;
+@property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) REAddCarSucceededBlcok succeededBlock;
 
 @property (nonatomic, assign) REUpdateCarListType updateCarListType;
@@ -44,8 +45,9 @@
 {
     [super viewDidLoad];
     [self configBackground];
-    self.title = @"添加VIN码";
+    self.title = self.updateCarListType == REUpdateCarListTypeSaveNewCar ? @"添加VIN码" : @"修改VIN码";
     [self layoutViews];
+    [self configRightBarButton];
     
     [self.view addKeyboardNonpanningWithActionHandler:^(CGRect keyboardFrameInView) {
         
@@ -56,6 +58,18 @@
 - (void)dealloc
 {
     [self.view removeKeyboardControl];
+}
+
+
+- (void)configRightBarButton
+{
+    UIButton *button = [UIButton buttonWithText:@"查询"
+                                           font:[UIFont systemFontOfSize:14.0f]
+                                      textColor:[UIColor whiteColor]
+                               highlightedColor:[UIColor lightGrayColor]
+                                         target:self
+                                         action:@selector(handleRightBarButtonTapped:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 
@@ -78,23 +92,34 @@
     UIImageView *textFieldBgView = [[UIImageView alloc] initWithFrame:CGRectMake(7.0f, 35.0f, 306.0f, 30.0f)];
     textFieldBgView.image = [[UIImage imageNamed:@"input_bar_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(4.0f, 3.0f, 4.0f, 3.0f)];
     [bgView addSubview:textFieldBgView];
+    [self.view addSubview:bgView];
     
-    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(8.0f, 0.0f, 298.0f, 30.0f)];
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(15.0f, 35.0f, 298.0f, 30.0f)];
     textField.placeholder = @"请输入完整17位VIN码";
     textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     textField.returnKeyType = UIReturnKeyDone;
     textField.keyboardType = UIKeyboardTypeASCIICapable;
     textField.delegate = self;
     textField.font = [UIFont systemFontOfSize:14.0f];
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     textField.text = self.currentEditCar.intactVinCode;
     [textField becomeFirstResponder];
     [textFieldBgView addSubview:textField];
+    self.textField = textField;
     
-    [self.view addSubview:bgView];
+    [self.view addSubview:self.textField];
     
     UIImageView *exampleView = [UIImageView imageViewWithImageName:@"example"];
     exampleView.frame = CGRectMake(7.0f, bgView.height + 7.0f, exampleView.width, exampleView.height);
     [self.view addSubview:exampleView];
+}
+
+
+#pragma mark -  Button Action
+
+- (void)handleRightBarButtonTapped:(UIButton *)sender
+{
+    [self textFieldShouldReturn:self.textField];
 }
 
 

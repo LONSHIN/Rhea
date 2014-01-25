@@ -71,7 +71,7 @@
     [oldButton setBackgroundImage:[UIImage imageNamed:normalImageNames[_currentShowType]] forState:UIControlStateHighlighted];
     
     UIButton *button = (UIButton *)[self.view viewWithTag:kTagOfButtonBasic + currentShowType];
-    NSArray *highlightedImageNames = @[@"detail_recall_highlighted", @"detail_break_rules_highlighted"];
+    NSArray *highlightedImageNames = @[@"detail_break_rules_highlighted", @"detail_recall_highlighted"];
     [button setBackgroundImage:[UIImage imageNamed:highlightedImageNames[currentShowType]] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:highlightedImageNames[currentShowType]] forState:UIControlStateHighlighted];
     

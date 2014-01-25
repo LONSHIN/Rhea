@@ -75,6 +75,7 @@
         weakSelf.breakRulesList = breakRulesList;
         weakSelf.car.breakRulesCount = breakRulesList.count;
         [RELibraryAPI updateCar:weakSelf.car];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationCarListChanged object:nil];
         [weakSelf.tableView reloadData];
     } failedBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
@@ -133,7 +134,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    REDetailHeaderView *headerView = [[REDetailHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f) title:@"您输入的车牌号" detail:self.car.licensePlateNumber recordCount:[NSString stringWithFormat:@"%d",self.breakRulesList.count]];
+    REDetailHeaderView *headerView = [[REDetailHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f) title:@"您输入的车牌号" detail:self.car.licensePlateNumber recordCount:[NSString stringWithFormat:@"%d", self.car.breakRulesCount]];
     
     return headerView;
 }

@@ -201,8 +201,10 @@ REDetailViewControllerDelegate>
     RECar *car = self.carList[index];
     REDetailViewController *detailVC = [self.childViewControllers objectAtIndex:index];
     
-    REAddCarViewController *addVC = [[REAddCarViewController alloc] initWithCar:car succeededBlock:^(id newCar) {
+    __weak REDetailListViewController *weakSelf = self;
+    REAddCarViewController *addVC = [[REAddCarViewController alloc] initWithCar:car succeededBlock:^(RECar *newCar) {
         [car updateWithCar:newCar];
+        weakSelf.title = newCar.licensePlateNumber;
         [detailVC switchToViewWithShowType:REDetailTypeBreakRules];
         [detailVC reloadBreakRulesDataWithCar:newCar];
     }];
